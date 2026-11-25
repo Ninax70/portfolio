@@ -20,19 +20,17 @@ r.setAttribute('data-mode',m);r.setAttribute('data-accent',a||'navy');})();
 :root{
   --bg:#ffffff;
   --surface:#f4f7fc;
+  --hero-bg:#e8ecf2;
   --text:#18263d;
   --muted:#64748b;
   --accent:#1f426f;
   --accent-2:#4776a8;
   --accent-soft:#e8eff8;
   --border:#dce5f0;
-  --code-bg:#102039;
-  --code-text:#e5edf9;
-  --code-key:#8db9f5;
-  --code-str:#d8e6ff;
   --link:#315f99;
   --grad-a:#1f3864;
   --grad-b:#2f6fd6;
+  --stroke-col:rgba(24,38,61,0.34);
 }
 /* Accent themes (light) */
 html[data-accent=green]{--accent:#047857; --accent-2:#10b981; --accent-soft:#e6f6ef; --link:#059669; --grad-a:#064e3b; --grad-b:#10b981}
@@ -41,81 +39,140 @@ html[data-accent=orange]{--accent:#c2410c; --accent-2:#f97316; --accent-soft:#ff
 /* Dark mode */
 html[data-mode=dark]{
   color-scheme:dark;
-  --bg:#0f1521; --surface:#171f2f; --text:#e8ecf4; --muted:#9aa5ba; --border:#27334b; --code-bg:#0a1020;
+  --bg:#0f1521; --surface:#171f2f; --hero-bg:#131b2b; --text:#e8ecf4; --muted:#9aa5ba; --border:#27334b;
   --accent:#8fb2f0; --accent-2:#6ea0ff; --accent-soft:#1d2a44; --link:#8fb2f0;
+  --stroke-col:rgba(232,236,244,0.28);
 }
 html[data-mode=dark][data-accent=green]{--accent:#6ee7b7; --accent-2:#34d399; --accent-soft:#12332a; --link:#6ee7b7}
 html[data-mode=dark][data-accent=violet]{--accent:#c4b5fd; --accent-2:#a78bfa; --accent-soft:#2a2146; --link:#c4b5fd}
 html[data-mode=dark][data-accent=orange]{--accent:#fdba74; --accent-2:#fb923c; --accent-soft:#3a2314; --link:#fdba74}
+
 *{box-sizing:border-box}
-html{scroll-behavior:smooth; scroll-padding-top:70px}
-body{margin:0; background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.6; font-size:16px}
+html{scroll-behavior:smooth; scroll-padding-top:86px}
+body{margin:0; background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.6; font-size:16px; overflow-x:hidden}
 a{color:var(--link)}
 .wrap{max-width:1080px; margin:0 auto; padding:0 20px}
 
-/* nav */
-header.nav{position:sticky; top:0; z-index:20; background:var(--bg); border-bottom:1px solid var(--border)}
-header.nav .wrap{display:flex; justify-content:space-between; align-items:center; gap:12px; padding-top:12px; padding-bottom:12px}
-.logo{font-weight:700; text-decoration:none; color:var(--accent); font-size:19px; letter-spacing:-.01em; white-space:nowrap}
-header.nav nav{display:flex; flex-wrap:wrap; gap:4px 16px; align-items:center}
-header.nav nav a{text-decoration:none; font-size:14px; color:var(--muted)}
-header.nav nav a:hover{color:var(--text)}
-.btn{display:inline-block; padding:10px 18px; border-radius:8px; text-decoration:none; font-weight:600; font-size:15px; border:1px solid var(--accent); color:var(--accent); background:transparent; cursor:pointer; font-family:inherit}
-.btn.primary{background:var(--accent); color:var(--bg)}
-header.nav nav a.btn{color:var(--bg); padding:7px 16px; font-size:14px; white-space:nowrap}
-.btns{display:flex; flex-wrap:wrap; gap:10px}
-
-/* theme controls */
-.tools{display:flex; align-items:center; gap:8px}
-.sw{width:16px; height:16px; border-radius:50%; border:2px solid var(--bg); padding:0; cursor:pointer}
+/* FLOATING PILL NAVBAR */
+header.pill-nav-wrap{
+  position:fixed; top:18px; left:0; right:0; z-index:50;
+  display:flex; justify-content:center; padding:0 16px; pointer-events:none;
+}
+.pill-nav{
+  pointer-events:auto;
+  display:flex; align-items:center; justify-content:space-between; gap:18px;
+  background:rgba(255,255,255,0.92); backdrop-filter:blur(12px);
+  border:1px solid var(--border); border-radius:16px;
+  padding:8px 14px; box-shadow:0 10px 30px rgba(15,23,42,.08);
+  max-width:960px; width:100%;
+}
+html[data-mode=dark] .pill-nav{background:rgba(23,31,47,0.9)}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text); font-weight:800; font-size:13px; letter-spacing:.08em; text-transform:uppercase; white-space:nowrap}
+.brand-mark{
+  width:30px; height:30px; border-radius:8px; background:var(--text); color:var(--bg);
+  display:flex; align-items:center; justify-content:center;
+  font-family:Georgia,"Times New Roman",serif; font-size:13px; font-weight:700; letter-spacing:0;
+}
+.pill-links{display:flex; align-items:center; gap:18px}
+.pill-links a{text-decoration:none; font-size:11.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--muted); transition:.15s}
+.pill-links a:hover{color:var(--text)}
+.pill-right{display:flex; align-items:center; gap:8px}
+.sw{width:14px; height:14px; border-radius:50%; border:2px solid var(--bg); padding:0; cursor:pointer}
 .sw[aria-pressed=true]{box-shadow:0 0 0 2px var(--accent)}
-#modeBtn{width:32px; height:32px; border-radius:8px; border:1px solid var(--border); background:transparent; color:var(--muted); cursor:pointer; font-size:15px; line-height:1}
-#modeBtn:hover{color:var(--text)}
-
-/* hero */
-.hero{
-  display:grid;
-  grid-template-columns:1.05fr 0.95fr;
-  gap:48px;
-  padding:40px 0 56px;
-  align-items:center;
+#modeBtn{width:30px; height:30px; border-radius:8px; border:1px solid var(--border); background:transparent; color:var(--text); cursor:pointer; font-size:14px; display:flex; align-items:center; justify-content:center}
+.hire-pill{
+  text-decoration:none; font-size:12px; font-weight:700; color:var(--text);
+  border:1.5px solid var(--text); border-radius:10px; padding:7px 16px;
+  white-space:nowrap; transition:.15s;
 }
-.counters{display:flex; gap:28px; margin:0 0 22px}
-.counters b{display:block; font-size:30px; color:var(--accent); line-height:1.1}
-.counters span{font-size:13px; color:var(--muted)}
-.badge{display:inline-block; font-size:13px; font-weight:600; padding:4px 12px; border-radius:999px; background:var(--accent-soft); color:var(--accent); margin-bottom:12px}
-.badge::before{content:""; display:inline-block; width:8px; height:8px; border-radius:50%; background:#2bb673; margin-right:8px}
-.hero h1{
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:clamp(38px,3.7vw,54px);
-  font-weight:500;
-  line-height:1.08;
-  letter-spacing:-1px;
-  margin:18px 0 12px;
-  color:var(--text);
-}
-.hero .role{font-size:18px; font-weight:600; color:var(--accent); margin:0 0 4px}
-.hero .tagline{font-size:17px; margin:0 0 12px; font-style:italic; color:var(--muted)}
-.hero p.lead{font-size:16px; color:var(--muted); margin:0 0 22px; max-width:520px}
-.connect{margin-top:16px; font-size:14px; color:var(--muted)}
-.connect a{margin-left:10px}
-.photo-col{position:relative; display:flex; justify-content:center}
-.photo{width:min(340px,80%); aspect-ratio:4/5; border-radius:20px; overflow:hidden; background:linear-gradient(135deg,var(--accent-soft),var(--surface)); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; position:relative}
-.photo img{width:100%; height:100%; object-fit:cover; display:block}
-.float{position:absolute; background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:10px 16px; box-shadow:0 6px 18px rgba(0,0,0,.08); text-align:center}
-.float b{display:block; font-size:24px; color:var(--accent); line-height:1.1}
-.float span{font-size:12px; color:var(--muted)}
-.float.a{left:0; bottom:40px}
-.float.b{right:0; top:40px}
+.hire-pill:hover{background:var(--text); color:var(--bg)}
 
-/* sections */
-section{padding:52px 0}
+/* KINETIC MARQUEE HERO */
+.kinetic-hero{
+  position:relative; min-height:92vh; padding-top:96px;
+  background:radial-gradient(circle at 50% 42%, var(--bg) 0%, var(--hero-bg) 100%);
+  display:flex; flex-direction:column; align-items:center; justify-content:flex-end;
+  overflow:hidden; border-bottom:1px solid var(--border);
+}
+.marquee-layer{
+  position:absolute; top:46%; left:0; width:100%; transform:translateY(-50%);
+  z-index:1; pointer-events:none; user-select:none; overflow:hidden;
+}
+.marquee-track{
+  display:flex; width:max-content;
+  animation:marqueeScroll 26s linear infinite;
+}
+.marquee-track span{
+  font-size:clamp(74px, 13.5vw, 185px);
+  font-weight:900;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  line-height:1;
+  color:transparent;
+  -webkit-text-stroke:1.6px var(--stroke-col);
+  padding-right:56px;
+  white-space:nowrap;
+}
+@keyframes marqueeScroll{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+
+.portrait-stage{
+  position:relative; z-index:2;
+  display:flex; flex-direction:column; align-items:center; justify-content:flex-end;
+  width:100%; max-width:560px; margin:0 auto;
+  transition:transform .25s ease-out;
+}
+.portrait-frame{
+  width:min(430px, 84vw);
+  height:min(530px, 68vh);
+  display:flex; align-items:flex-end; justify-content:center;
+  position:relative;
+}
+.portrait-frame img{
+  width:100%; height:100%; object-fit:contain; object-position:bottom center;
+  filter:drop-shadow(0 18px 28px rgba(15,23,42,0.16));
+  display:block;
+}
+
+.hero-dock{
+  position:relative; z-index:4; width:100%;
+  background:linear-gradient(to top, var(--bg) 68%, rgba(255,255,255,0) 100%);
+  padding:28px 20px 26px; text-align:center;
+}
+html[data-mode=dark] .hero-dock{
+  background:linear-gradient(to top, var(--bg) 68%, rgba(15,21,33,0) 100%);
+}
+.hero-dock .role-line{
+  font-size:clamp(14px, 1.8vw, 17px); font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--accent); margin:0 0 6px;
+}
+.hero-dock .sub-line{
+  font-size:15px; color:var(--muted); max-width:580px; margin:0 auto 16px;
+}
+.hero-actions{display:flex; justify-content:center; align-items:center; gap:12px; flex-wrap:wrap}
+.btn{display:inline-block; padding:11px 22px; border-radius:999px; text-decoration:none; font-weight:600; font-size:14.5px; border:1px solid var(--accent); color:var(--accent); background:var(--bg); cursor:pointer; font-family:inherit; transition:.15s}
+.btn.primary{background:var(--accent); color:var(--bg)}
+.btn:hover{transform:translateY(-1px)}
+
+.scroll-indicator{
+  position:absolute; right:26px; bottom:32px; z-index:5;
+  display:flex; flex-direction:column; align-items:center; gap:10px;
+  text-decoration:none; color:var(--muted); font-size:10px; font-weight:700;
+  letter-spacing:.22em; text-transform:uppercase;
+}
+.scroll-indicator .line{width:1px; height:42px; background:var(--muted); opacity:.6}
+.scroll-indicator span{writing-mode:vertical-rl}
+
+/* SECTIONS */
+section{padding:56px 0}
 .eyebrow{color:var(--accent-2); font-weight:700; font-size:13px; letter-spacing:.08em; text-transform:uppercase; margin:0 0 4px}
 section h2{font-size:28px; margin:0 0 8px; line-height:1.2}
 section .sub{color:var(--muted); margin:0 0 26px; max-width:640px}
 .alt{background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border)}
 
-/* about */
+/* ABOUT */
 .about{display:grid; grid-template-columns:1.5fr 1fr; gap:32px; align-items:start}
 .about p{margin:0 0 14px}
 .about-stats{display:grid; gap:14px}
@@ -123,7 +180,7 @@ section .sub{color:var(--muted); margin:0 0 26px; max-width:640px}
 .about-stats b{font-size:32px; color:var(--accent); min-width:52px}
 .about-stats span{font-size:14px; color:var(--muted)}
 
-/* experience */
+/* EXPERIENCE */
 .exp{display:grid; gap:16px}
 .expcard{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:20px; display:grid; grid-template-columns:56px 1fr; gap:16px}
 .logo-box{width:56px; height:56px; border-radius:12px; background:#ffffff; border:1px solid var(--border); color:var(--accent); font-weight:800; display:flex; align-items:center; justify-content:center; font-size:18px; overflow:hidden; padding:6px}
@@ -226,13 +283,13 @@ dialog ul{padding-left:20px}
 dialog .close{float:right; font:inherit; font-size:14px; padding:4px 12px; border-radius:8px; border:1px solid var(--border); background:var(--surface); color:var(--text); cursor:pointer}
 .chip{display:inline-block; padding:4px 12px; border-radius:999px; font-size:14px; text-decoration:none; background:var(--surface); color:var(--link); border:1px solid var(--border); margin:4px 8px 0 0}
 
-/* skills */
+/* SKILLS */
 .skills{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px}
 .skillbox{background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:18px}
 .skillbox h3{margin:0 0 10px; font-size:16px}
 .skillbox .tag{background:var(--surface); color:var(--text); border:1px solid var(--border)}
 
-/* education + certs */
+/* EDUCATION + CERTS */
 .edu{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px}
 .edcard{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:20px}
 .ed-head{display:flex; align-items:center; gap:14px; margin-bottom:10px}
@@ -249,7 +306,7 @@ dialog .close{float:right; font:inherit; font-size:14px; padding:4px 12px; borde
 .cert h3{margin:2px 0 2px; font-size:16px; line-height:1.35}
 .cert p{margin:0; font-size:14px; color:var(--muted)}
 
-/* contact */
+/* CONTACT */
 .contact{display:grid; grid-template-columns:1fr 1.2fr; gap:32px; align-items:start}
 .info div{margin-bottom:14px}
 .info small{display:block; font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted)}
@@ -258,7 +315,6 @@ dialog .close{float:right; font:inherit; font-size:14px; padding:4px 12px; borde
 .form input,.form textarea{font:inherit; padding:10px 12px; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text); width:100%}
 .form textarea{min-height:110px; resize:vertical}
 .form small{color:var(--muted)}
-
 .row2{display:grid; grid-template-columns:1fr 1fr; gap:12px}
 .form .send{display:flex; align-items:center; justify-content:center; gap:8px; width:100%}
 .form .note{text-align:center; margin:0}
@@ -272,106 +328,86 @@ dialog .close{float:right; font:inherit; font-size:14px; padding:4px 12px; borde
 .social a{width:48px; height:48px; border-radius:12px; border:1px solid var(--border); background:var(--bg); display:flex; align-items:center; justify-content:center; color:var(--muted); transition:.15s}
 .social a:hover{color:var(--accent); border-color:var(--accent); transform:translateY(-2px)}
 .social svg{width:22px; height:22px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round}
-@media (max-width:520px){.row2{grid-template-columns:1fr}}
+
 footer{background:var(--surface); border-top:1px solid var(--border); padding:36px 0 24px; color:var(--muted); font-size:14px}
 .foot{display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:24px}
 .foot h4{margin:0 0 8px; color:var(--text); font-size:15px}
 .foot a{display:block; text-decoration:none; margin-bottom:4px}
 .copy{margin-top:24px; padding-top:16px; border-top:1px solid var(--border); text-align:center}
 
-@media (max-width:960px){
-  header.nav nav .hide-sm{display:none}
-}
-@media (max-width:820px){
-  .hero{grid-template-columns:1fr; gap:32px; padding:32px 0 48px}
-  .photo-col{order:-1}
+@media (max-width:860px){
+  .pill-links{display:none}
   .about,.contact,.foot{grid-template-columns:1fr}
   .expcard{grid-template-columns:1fr}
   .stage{height:250px}
   .slide{height:220px}
   .nav-arrow{width:34px; height:34px; font-size:15px}
+  .scroll-indicator{display:none}
 }
-
-/* ELEGANT BLUE-WHITE PORTFOLIO (now theme-aware) */
-.hero{grid-template-columns:1.05fr 0.95fr; gap:64px; padding:64px 0 76px; align-items:center}
-.hero h1{font-family:Georgia,"Times New Roman",serif; font-size:clamp(42px,5vw,68px); font-weight:500; line-height:1.05; letter-spacing:-1.8px; margin:18px 0 12px; color:var(--text)}
-.hero .role{font-size:clamp(17px,2vw,22px); font-weight:400; line-height:1.5; color:var(--muted); margin-bottom:8px}
-.hero .tagline{font-style:normal; font-size:18px; color:var(--accent); margin-bottom:20px}
-.hero p.lead{font-size:17px; line-height:1.8; max-width:560px; margin-bottom:28px}
-.photo-col{position:relative; display:flex; justify-content:center; align-items:center; isolation:isolate}
-.photo-col::before{content:""; position:absolute; inset:-22px -12px 18px 22px; background:var(--accent-soft); border-radius:28px; transform:rotate(3deg); z-index:-1}
-.photo{width:min(100%,490px); aspect-ratio:4/5; border-radius:22px; overflow:hidden; background:var(--accent-soft); border:7px solid var(--bg); box-shadow:0 18px 50px rgba(31,66,111,.12)}
-.photo img{width:100%; height:100%; object-fit:cover; object-position:center top; display:block}
-.counters{gap:32px; margin-bottom:24px}
-.counters b{font-size:30px; color:var(--accent)}
-.badge{background:var(--accent-soft); color:var(--accent); padding:8px 15px; margin-bottom:14px}
-.btns{gap:12px}
-.btn{border-radius:999px; padding:12px 22px}
-.btn.primary{background:var(--accent); border-color:var(--accent)}
-header.nav{background:var(--bg); border-bottom:1px solid var(--border)}
-header.nav .logo{font-family:Georgia,"Times New Roman",serif; font-size:20px}
-section.alt{background:var(--surface)}
-@media(max-width:820px){
-  .hero{grid-template-columns:1fr; gap:36px; padding:36px 0 52px}
-  .photo-col{order:-1}
-  .photo{width:min(100%,420px)}
-  .hero h1{font-size:clamp(40px,9vw,58px)}
-  header.nav .logo{font-size:16px}
+@media (max-width:520px){
+  .row2{grid-template-columns:1fr}
+  .sw{display:none}
 }
 </style>
 </head>
 <body>
 
-<header class="nav">
-  <div class="wrap">
-    <a class="logo" href="#top">Dwi Hadi Yulvi Baskoro</a>
-    <nav>
-      <a class="hide-sm" href="#about">About</a>
-      <a class="hide-sm" href="#experience">Experience</a>
-      <a class="hide-sm" href="#projects">Projects</a>
-      <a class="hide-sm" href="#skills">Skills</a>
-      <a class="hide-sm" href="#education">Education</a>
-      <a class="hide-sm" href="#certificates">Certificates</a>
-      <a class="hide-sm" href="#contact">Contact</a>
-      <div class="tools" role="group" aria-label="Theme">
-        <button type="button" class="sw" data-accent="navy" style="background:#1f426f" aria-label="Navy theme" aria-pressed="true"></button>
-        <button type="button" class="sw" data-accent="green" style="background:#059669" aria-label="Green theme" aria-pressed="false"></button>
-        <button type="button" class="sw" data-accent="violet" style="background:#7c3aed" aria-label="Violet theme" aria-pressed="false"></button>
-        <button type="button" class="sw" data-accent="orange" style="background:#ea580c" aria-label="Orange theme" aria-pressed="false"></button>
-        <button type="button" id="modeBtn" aria-label="Toggle dark mode">☾</button>
-      </div>
-      <a class="btn primary" href="#contact">Hire Me</a>
+<!-- FLOATING PILL HEADER -->
+<header class="pill-nav-wrap">
+  <div class="pill-nav">
+    <a class="brand" href="#top">
+      <span class="brand-mark">HB</span>
+      <span>Hadi Baskoro</span>
+    </a>
+    <nav class="pill-links">
+      <a href="#projects">Work</a>
+      <a href="#skills">What I Can Do</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#certificates">Trainings</a>
     </nav>
+    <div class="pill-right">
+      <button type="button" class="sw" data-accent="navy" style="background:#1f426f" aria-label="Navy theme" aria-pressed="true"></button>
+      <button type="button" class="sw" data-accent="green" style="background:#059669" aria-label="Green theme" aria-pressed="false"></button>
+      <button type="button" class="sw" data-accent="violet" style="background:#7c3aed" aria-label="Violet theme" aria-pressed="false"></button>
+      <button type="button" class="sw" data-accent="orange" style="background:#ea580c" aria-label="Orange theme" aria-pressed="false"></button>
+      <button type="button" id="modeBtn" aria-label="Toggle dark mode">☀</button>
+      <a class="hire-pill" href="#contact">Hire Me</a>
+    </div>
   </div>
 </header>
 
 <main id="top">
 
-  <!-- HERO -->
-  <div class="wrap hero" id="hero">
-    <div>
-      <span class="badge">Available for Opportunities</span>
-      <h1>Hello, I'm Dwi Hadi Yulvi Baskoro</h1>
-      <p class="role">Management Graduate | Commercial & Data Analyst</p>
-      <p class="tagline">Turning customer data into commercial decisions.</p>
-      <p class="lead">I work at the point where sales questions meet data. With 3+ years across telecommunications, banking, and operations, I focus on customer segmentation, campaign analysis, and distributor performance.</p>
-      <div class="btns">
-        <a class="btn primary" href="#contact">Get in Touch</a>
+  <!-- KINETIC MARQUEE HERO -->
+  <section class="kinetic-hero" id="hero">
+    <div class="marquee-layer" id="marqueeLayer" aria-hidden="true">
+      <div class="marquee-track">
+        <span>DWI HADI YULVI BASKORO • COMMERCIAL & DATA ANALYST •</span>
+        <span>DWI HADI YULVI BASKORO • COMMERCIAL & DATA ANALYST •</span>
+      </div>
+    </div>
+
+    <div class="portrait-stage" id="portraitStage">
+      <div class="portrait-frame">
+        <img src="Foto%20Dwi%20Hadi%20Y.B.png" alt="Dwi Hadi Yulvi Baskoro">
+      </div>
+    </div>
+
+    <div class="hero-dock">
+      <p class="role-line">Management Graduate • Commercial & Data Analyst</p>
+      <p class="sub-line">Turning customer data into commercial decisions — 3+ years across telecommunications, banking, and operations.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#projects">Explore Work</a>
         <a class="btn" href="CV_Dwi_Hadi_Yulvi_Baskoro.pdf" target="_blank" rel="noopener">Download Resume</a>
       </div>
-      <div class="connect">Connect:
-        <a href="https://linkedin.com/in/hadhibaskoro" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/Ninax70" target="_blank" rel="noopener">GitHub</a>
-      </div>
     </div>
-    <div class="photo-col">
-      <div class="photo">
-        <img src="Foto%20Dwi%20Hadi%20Y.B.png" alt="Dwi Hadi Yulvi Baskoro" onerror="this.style.display='none'">
-      </div>
-      <div class="float a"><b>4</b><span>Data & ML Projects</span></div>
-      <div class="float b"><b>8</b><span>Roles & Programs</span></div>
-    </div>
-  </div>
+
+    <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+      <div class="line"></div>
+      <span>SCROLL DOWN</span>
+    </a>
+  </section>
 
   <!-- ABOUT -->
   <section id="about" class="alt">
@@ -805,7 +841,7 @@ section.alt{background:var(--surface)}
   function syncTheme(){
     var dark=root.getAttribute('data-mode')==='dark';
     var acc=root.getAttribute('data-accent');
-    modeBtn.textContent=dark?'☀':'☾';
+    modeBtn.textContent=dark?'☾':'☀';
     swatches.forEach(function(s){s.setAttribute('aria-pressed',s.getAttribute('data-accent')===acc?'true':'false');});
   }
   modeBtn.addEventListener('click',function(){
@@ -819,6 +855,24 @@ section.alt{background:var(--surface)}
     });
   });
   syncTheme();
+
+  /* Subtle mouse & scroll parallax on Hero Portrait + Marquee */
+  var heroEl=document.getElementById('hero');
+  var portrait=document.getElementById('portraitStage');
+  var marquee=document.getElementById('marqueeLayer');
+  if(heroEl && portrait && marquee){
+    heroEl.addEventListener('mousemove',function(e){
+      var rect=heroEl.getBoundingClientRect();
+      var nx=(e.clientX-rect.left)/rect.width - 0.5;
+      var ny=(e.clientY-rect.top)/rect.height - 0.5;
+      portrait.style.transform='translate3d('+(nx*14)+'px,'+(ny*8)+'px,0)';
+      marquee.style.transform='translate3d('+(-nx*24)+'px,calc(-50% + '+(-ny*10)+'px),0)';
+    });
+    heroEl.addEventListener('mouseleave',function(){
+      portrait.style.transform='translate3d(0,0,0)';
+      marquee.style.transform='translate3d(0,-50%,0)';
+    });
+  }
 
   /* Work Gallery 3D Coverflow Carousel */
   var allItems=Array.prototype.slice.call(document.querySelectorAll('#projectStore .proj-item'));
@@ -865,7 +919,6 @@ section.alt{background:var(--surface)}
           '</div>';
       }
 
-      /* Circular offset relative to active index */
       var diff=i-idx;
       if(n>2){
         if(diff>n/2) diff-=n;
