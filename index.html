@@ -334,6 +334,7 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
 .foot h4{margin:0 0 8px; color:var(--text); font-size:15px}
 .foot a{display:block; text-decoration:none; margin-bottom:4px}
 .copy{margin-top:24px; padding-top:16px; border-top:1px solid var(--border); text-align:center}
+.logo{font-weight:700; text-decoration:none; color:var(--accent); font-size:19px; letter-spacing:-.01em}
 
 @media (max-width:860px){
   .pill-links{display:none}
@@ -355,7 +356,7 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
 <!-- FLOATING PILL HEADER -->
 <header class="pill-nav-wrap">
   <div class="pill-nav">
-    <a class="brand" href="#top">
+    <a class="brand" href="#" data-scroll-top>
       <span class="brand-mark">HB</span>
       <span>Hadi Baskoro</span>
     </a>
@@ -377,7 +378,7 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
   </div>
 </header>
 
-<main id="top">
+<main>
 
   <!-- KINETIC MARQUEE HERO -->
   <section class="kinetic-hero" id="hero">
@@ -806,7 +807,7 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
   <div class="wrap">
     <div class="foot">
       <div>
-        <a class="logo" href="#top" style="margin-bottom:6px">Dwi Hadi Yulvi Baskoro</a>
+        <a class="logo" href="#" data-scroll-top style="margin-bottom:6px">Dwi Hadi Yulvi Baskoro</a>
         <p style="margin:6px 0 0">Turning customer data into commercial decisions.</p>
       </div>
       <div>
@@ -818,7 +819,7 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
         <a href="#education">Education</a><a href="#certificates">Certificates</a><a href="#contact">Contact</a><a href="CV_Dwi_Hadi_Yulvi_Baskoro.pdf" target="_blank" rel="noopener">Resume</a>
       </div>
     </div>
-    <div class="copy">© 2026 Dwi Hadi Yulvi Baskoro. All rights reserved. | <a href="#top" style="display:inline">Back to Top</a></div>
+    <div class="copy">© 2026 Dwi Hadi Yulvi Baskoro. All rights reserved. | <a href="#" data-scroll-top style="display:inline">Back to Top</a></div>
   </div>
 </footer>
 
@@ -833,6 +834,20 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
 
 <script>
 (function(){
+  /* Clean URL: scroll to top without #top hash & strip existing #top */
+  if(window.location.hash==='#top'){
+    history.replaceState(null,'',window.location.pathname+window.location.search);
+  }
+  document.querySelectorAll('[data-scroll-top]').forEach(function(el){
+    el.addEventListener('click',function(e){
+      e.preventDefault();
+      window.scrollTo({top:0,behavior:'smooth'});
+      if(window.location.hash){
+        history.replaceState(null,'',window.location.pathname+window.location.search);
+      }
+    });
+  });
+
   /* Theme: accent color + dark mode */
   var root=document.documentElement;
   var modeBtn=document.getElementById('modeBtn');
@@ -856,7 +871,7 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
   });
   syncTheme();
 
-  /* Subtle mouse & scroll parallax on Hero Portrait + Marquee */
+  /* Subtle mouse parallax on Hero Portrait + Marquee */
   var heroEl=document.getElementById('hero');
   var portrait=document.getElementById('portraitStage');
   var marquee=document.getElementById('marqueeLayer');
