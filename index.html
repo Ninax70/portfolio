@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XZ7E1ZLH1T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XZ7E1ZLH1T');
+</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dwi Hadi Yulvi Baskoro | Commercial & Data Analyst Portfolio</title>
@@ -399,8 +408,8 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
       <p class="role-line">Management Graduate • Commercial & Data Analyst</p>
       <p class="sub-line">Turning customer data into commercial decisions — 3+ years across telecommunications, banking, and operations.</p>
       <div class="hero-actions">
-        <a class="btn primary" href="#projects">Explore Work</a>
-        <a class="btn" href="CV_Dwi_Hadi_Yulvi_Baskoro.pdf" target="_blank" rel="noopener">Download Resume</a>
+        <a class="btn primary" href="#projects" data-ga-event="explore_work_click">Explore Work</a>
+        <a class="btn" href="CV_Dwi_Hadi_Yulvi_Baskoro.pdf" target="_blank" rel="noopener" data-ga-event="download_resume_click">Download Resume</a>
       </div>
     </div>
 
@@ -777,8 +786,8 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
           <div><small>Open to</small>Commercial analyst, business analysis, data analytics, and management trainee roles</div>
           <div class="follow"><small>Follow me on</small>
             <div class="social">
-              <a href="https://linkedin.com/in/hadhibaskoro" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-              <a href="https://github.com/Ninax70" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+              <a href="https://linkedin.com/in/hadhibaskoro" target="_blank" rel="noopener" aria-label="LinkedIn" data-ga-event="social_linkedin_click"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+              <a href="https://github.com/Ninax70" target="_blank" rel="noopener" aria-label="GitHub" data-ga-event="social_github_click"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
             </div>
           </div>
         </div>
@@ -816,7 +825,7 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
       </div>
       <div>
         <h4>More</h4>
-        <a href="#education">Education</a><a href="#certificates">Certificates</a><a href="#contact">Contact</a><a href="CV_Dwi_Hadi_Yulvi_Baskoro.pdf" target="_blank" rel="noopener">Resume</a>
+        <a href="#education">Education</a><a href="#certificates">Certificates</a><a href="#contact">Contact</a><a href="CV_Dwi_Hadi_Yulvi_Baskoro.pdf" target="_blank" rel="noopener" data-ga-event="download_resume_click">Resume</a>
       </div>
     </div>
     <div class="copy">© 2026 Dwi Hadi Yulvi Baskoro. All rights reserved. | <a href="#" data-scroll-top style="display:inline">Back to Top</a></div>
@@ -834,6 +843,26 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
 
 <script>
 (function(){
+  /* Helper to send GA4 custom events safely */
+  function trackEvent(eventName, params){
+    if(typeof window.gtag==='function'){
+      window.gtag('event', eventName, params || {});
+    }
+  }
+
+  document.querySelectorAll('[data-ga-event]').forEach(function(el){
+    el.addEventListener('click',function(){
+      trackEvent(el.getAttribute('data-ga-event'), {
+        link_text: (el.textContent || '').trim(),
+        link_href: el.getAttribute('href') || ''
+      });
+    });
+  });
+
+  document.querySelector('.hire-pill').addEventListener('click',function(){
+    trackEvent('hire_me_click', { location: 'navbar_pill' });
+  });
+
   /* Clean URL: scroll to top without #top hash & strip existing #top */
   if(window.location.hash==='#top'){
     history.replaceState(null,'',window.location.pathname+window.location.search);
@@ -898,8 +927,11 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
   var idx=0;
 
   function openProjectModal(item){
-    document.getElementById('dlgCat').textContent=item.querySelector('.cat').textContent;
-    document.getElementById('dlgTitle').textContent=item.querySelector('h3').textContent;
+    var title=item.querySelector('h3').textContent;
+    var cat=item.querySelector('.cat').textContent;
+    trackEvent('view_project_detail', { project_title: title, project_category: cat });
+    document.getElementById('dlgCat').textContent=cat;
+    document.getElementById('dlgTitle').textContent=title;
     var res=item.querySelector('.result').outerHTML;
     document.getElementById('dlgBody').innerHTML=res+item.querySelector('.detail').innerHTML;
     if(dlg.showModal){dlg.showModal();}else{dlg.setAttribute('open','');}
@@ -1006,6 +1038,7 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
       buttons.forEach(function(x){x.classList.remove('active');});
       b.classList.add('active');
       var f=b.getAttribute('data-filter');
+      trackEvent('filter_projects', { filter_category: f });
       activeItems=f==='all'?allItems.slice():allItems.filter(function(it){return it.getAttribute('data-cat')===f;});
       idx=0;
       renderGallery();
@@ -1022,6 +1055,7 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
   form.addEventListener('submit',function(e){
     e.preventDefault();
     msg.className='msg'; msg.textContent='';
+    trackEvent('contact_form_submit', { status: 'attempt' });
     if(form.action.indexOf('YOUR_FORM_ID')!==-1){
       msg.className='msg err';
       msg.textContent='The contact form is not activated yet. Please message me on LinkedIn instead.';
@@ -1031,8 +1065,16 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
     btn.textContent='Sending...';
     fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
       .then(function(r){
-        if(r.ok){form.reset(); msg.className='msg ok'; msg.textContent='Thank you! Your message has been sent.';}
-        else{msg.className='msg err'; msg.textContent='Something went wrong. Please try again or message me on LinkedIn.';}
+        if(r.ok){
+          form.reset();
+          msg.className='msg ok';
+          msg.textContent='Thank you! Your message has been sent.';
+          trackEvent('contact_form_submit', { status: 'success' });
+        }
+        else{
+          msg.className='msg err';
+          msg.textContent='Something went wrong. Please try again or message me on LinkedIn.';
+        }
       })
       .catch(function(){msg.className='msg err'; msg.textContent='Network error. Please try again or message me on LinkedIn.';})
       .then(function(){btn.textContent='Send Message';});
