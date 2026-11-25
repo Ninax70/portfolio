@@ -80,9 +80,6 @@ header.nav nav a.btn{color:var(--bg); padding:7px 16px; font-size:14px; white-sp
   padding:40px 0 56px;
   align-items:center;
 }
-.code{background:var(--code-bg); color:var(--code-text); border-radius:12px; padding:16px 18px; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:14px; line-height:1.7; margin:0 0 22px; max-width:420px; overflow-x:auto}
-.code .k{color:var(--code-key); font-weight:700}
-.code .s{color:var(--code-str)}
 .counters{display:flex; gap:28px; margin:0 0 22px}
 .counters b{display:block; font-size:30px; color:var(--accent); line-height:1.1}
 .counters span{font-size:13px; color:var(--muted)}
@@ -105,7 +102,6 @@ header.nav nav a.btn{color:var(--bg); padding:7px 16px; font-size:14px; white-sp
 .photo-col{position:relative; display:flex; justify-content:center}
 .photo{width:min(340px,80%); aspect-ratio:4/5; border-radius:20px; overflow:hidden; background:linear-gradient(135deg,var(--accent-soft),var(--surface)); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; position:relative}
 .photo img{width:100%; height:100%; object-fit:cover; display:block}
-.photo .initials{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:80px; font-weight:800; color:var(--accent); opacity:.85}
 .float{position:absolute; background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:10px 16px; box-shadow:0 6px 18px rgba(0,0,0,.08); text-align:center}
 .float b{display:block; font-size:24px; color:var(--accent); line-height:1.1}
 .float span{font-size:12px; color:var(--muted)}
@@ -143,26 +139,82 @@ details summary{cursor:pointer; color:var(--link); font-size:14px; font-weight:6
 details ul{margin:8px 0 0; padding-left:20px}
 details li{margin-bottom:4px}
 
-/* projects */
-.filters{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:22px}
-.filters button{font:inherit; font-size:14px; padding:6px 16px; border-radius:999px; border:1px solid var(--border); background:var(--bg); color:var(--text); cursor:pointer}
+/* WORK GALLERY (3D COVERFLOW CAROUSEL) */
+.gal-head{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:16px; margin-bottom:28px}
+.gal-head h2{font-size:clamp(32px,4vw,42px); font-weight:800; letter-spacing:-.02em; margin:0 0 6px}
+.gal-head .sub{margin:0}
+.filters{display:flex; flex-wrap:wrap; gap:8px; margin:0}
+.filters button{font:inherit; font-size:13px; font-weight:600; padding:8px 16px; border-radius:10px; border:1px solid var(--border); background:var(--bg); color:var(--text); cursor:pointer; transition:.15s}
+.filters button:hover{border-color:var(--accent)}
 .filters button.active{background:var(--accent); color:var(--bg); border-color:var(--accent)}
-.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:18px}
-.card{background:var(--bg); border:1px solid var(--border); border-radius:14px; overflow:hidden; display:flex; flex-direction:column}
-.thumb{height:130px; display:flex; align-items:center; justify-content:center; font-size:44px; font-weight:800; color:#fff; letter-spacing:.02em}
+
+.stage-wrap{position:relative; margin:12px auto 0; user-select:none}
+.stage{position:relative; height:310px; display:flex; align-items:center; justify-content:center; overflow:hidden}
+.slide{
+  position:absolute;
+  width:min(460px, 78vw);
+  height:270px;
+  border-radius:18px;
+  overflow:hidden;
+  background:var(--bg);
+  border:1px solid var(--border);
+  box-shadow:0 18px 40px rgba(15,23,42,.18);
+  transition:transform .42s cubic-bezier(.22,1,.36,1), opacity .35s ease, filter .35s ease;
+  cursor:pointer;
+  display:flex;
+  flex-direction:column;
+}
+.slide img{width:100%; height:100%; object-fit:cover; display:block}
+.slide-cover{
+  width:100%; height:100%; padding:26px 28px; color:#fff;
+  display:flex; flex-direction:column; justify-content:space-between;
+  position:relative;
+}
+.slide-cover .pill{
+  align-self:flex-start;
+  font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  padding:5px 11px; border-radius:999px;
+  background:rgba(255,255,255,.16); backdrop-filter:blur(4px);
+}
+.slide-cover .metric{font-size:clamp(28px,4vw,38px); font-weight:800; line-height:1.1; letter-spacing:-.02em; margin:10px 0 4px}
+.slide-cover .caption{font-size:14px; opacity:.9; margin:0}
+.slide-cover .mini-tags{display:flex; flex-wrap:wrap; gap:6px}
+.slide-cover .mini-tags span{font-size:12px; padding:3px 10px; border-radius:6px; background:rgba(255,255,255,.16)}
 .t-commercial{background:linear-gradient(135deg,var(--grad-a),var(--grad-b))}
-.t-analytics{background:linear-gradient(135deg,#0f766e,#2bb673)}
-.t-engineering{background:linear-gradient(135deg,#7c3aed,#c084fc)}
-.card .body{padding:18px; display:flex; flex-direction:column; flex:1}
-.card .cat{font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--accent-2); margin:0 0 6px}
-.card h3{margin:0 0 8px; font-size:18px; line-height:1.3}
-.card p.d{margin:0 0 12px; font-size:15px; color:var(--muted)}
+.t-analytics{background:linear-gradient(135deg,#0f766e,#10b981)}
+.t-engineering{background:linear-gradient(135deg,#5b21b6,#8b5cf6)}
+.t-ml{background:linear-gradient(135deg,#9a3412,#ea580c)}
+
+.nav-arrow{
+  position:absolute; top:50%; transform:translateY(-50%); z-index:12;
+  width:42px; height:42px; border-radius:50%; border:1px solid var(--border);
+  background:var(--bg); color:var(--text); font-size:18px; font-weight:700;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,.1); transition:.15s;
+}
+.nav-arrow:hover{background:var(--accent); color:var(--bg); border-color:var(--accent)}
+.nav-arrow.prev{left:8px}
+.nav-arrow.next{right:8px}
+
+.gal-info{max-width:680px; margin:22px auto 0; text-align:center; padding:0 12px}
+.gal-info .gal-cat{font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--accent-2); margin:0 0 6px}
+.gal-info h3{font-size:clamp(22px,2.6vw,28px); font-weight:800; line-height:1.25; margin:0 0 10px; color:var(--text)}
+.gal-info .gal-desc{font-size:15.5px; color:var(--muted); margin:0 0 12px; line-height:1.65}
+.gal-info .gal-res{display:inline-block; background:var(--accent-soft); color:var(--accent); font-size:14px; font-weight:600; padding:6px 14px; border-radius:999px; margin-bottom:16px}
+.gal-info .gal-actions{display:flex; justify-content:center; align-items:center; gap:16px; flex-wrap:wrap}
+.view-link{
+  font:inherit; font-size:15px; font-weight:700; color:var(--text);
+  background:none; border:none; border-bottom:2px solid var(--text);
+  padding:2px 2px 4px; cursor:pointer; transition:.15s;
+}
+.view-link:hover{color:var(--accent); border-color:var(--accent)}
+.gal-dots{display:flex; justify-content:center; gap:8px; margin-top:20px}
+.gal-dots button{width:9px; height:9px; border-radius:999px; border:none; padding:0; background:var(--border); cursor:pointer; transition:.2s}
+.gal-dots button.active{width:24px; background:var(--accent)}
+
+.detail{display:none}
 .result{background:var(--accent-soft); border-radius:10px; padding:10px 12px; margin-bottom:12px; font-size:14px}
 .result b{display:block; font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--accent)}
-.card .tags{margin-bottom:14px}
-.card .more{margin-top:auto; font:inherit; font-weight:600; font-size:14px; color:var(--link); background:none; border:none; padding:0; cursor:pointer; text-align:left}
-.card.hide{display:none}
-.detail{display:none}
 dialog{border:1px solid var(--border); border-radius:16px; padding:0; max-width:620px; width:calc(100% - 32px); background:var(--bg); color:var(--text)}
 dialog::backdrop{background:rgba(0,0,0,.5)}
 dialog .inner{padding:24px}
@@ -235,6 +287,9 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
   .photo-col{order:-1}
   .about,.contact,.foot{grid-template-columns:1fr}
   .expcard{grid-template-columns:1fr}
+  .stage{height:250px}
+  .slide{height:220px}
+  .nav-arrow{width:34px; height:34px; font-size:15px}
 }
 
 /* ELEGANT BLUE-WHITE PORTFOLIO (now theme-aware) */
@@ -303,7 +358,6 @@ section.alt{background:var(--surface)}
       <div class="btns">
         <a class="btn primary" href="#contact">Get in Touch</a>
         <a class="btn" href="CV_Dwi_Hadi_Yulvi_Baskoro.pdf" target="_blank" rel="noopener">Download Resume</a>
-        <a class="btn" href="https://bit.ly/Hadi-BaskoroPortofolio" target="_blank" rel="noopener">My Main Website</a>
       </div>
       <div class="connect">Connect:
         <a href="https://linkedin.com/in/hadhibaskoro" target="_blank" rel="noopener">LinkedIn</a>
@@ -314,7 +368,7 @@ section.alt{background:var(--surface)}
       <div class="photo">
         <img src="Foto%20Dwi%20Hadi%20Y.B.png" alt="Dwi Hadi Yulvi Baskoro" onerror="this.style.display='none'">
       </div>
-      <div class="float a"><b>3</b><span>Data Projects</span></div>
+      <div class="float a"><b>4</b><span>Data & ML Projects</span></div>
       <div class="float b"><b>8</b><span>Roles & Programs</span></div>
     </div>
   </div>
@@ -332,7 +386,7 @@ section.alt{background:var(--surface)}
         </div>
         <div class="about-stats">
           <div><b>8</b><span>Roles & Programs</span></div>
-          <div><b>3</b><span>Data Projects</span></div>
+          <div><b>4</b><span>Data & ML Projects</span></div>
           <div><b>3</b><span>Commercial Case Studies</span></div>
         </div>
       </div>
@@ -443,149 +497,157 @@ section.alt{background:var(--surface)}
     </div>
   </section>
 
-  <!-- PROJECTS -->
+  <!-- PROJECTS (WORK GALLERY COVERFLOW) -->
   <section id="projects" class="alt">
     <div class="wrap">
-      <p class="eyebrow">Projects</p>
-      <h2>Turning Data into Insight</h2>
-      <p class="sub">Commercial case studies from my work, plus hands-on data projects.</p>
-
-      <div class="filters" role="group" aria-label="Filter projects">
-        <button class="active" data-filter="all">All</button>
-        <button data-filter="commercial">Commercial Case Study</button>
-        <button data-filter="analytics">Business Analytics</button>
-        <button data-filter="engineering">Data Engineering</button>
+      <div class="gal-head">
+        <div>
+          <p class="eyebrow">Selected Work</p>
+          <h2>Work Gallery</h2>
+          <p class="sub">Commercial case studies, analytics dashboards, data pipelines, and ML applications.</p>
+        </div>
+        <div class="filters" role="group" aria-label="Filter projects">
+          <button class="active" data-filter="all">All (7)</button>
+          <button data-filter="commercial">Commercial</button>
+          <button data-filter="analytics">Analytics</button>
+          <button data-filter="engineering">Engineering & ML</button>
+        </div>
       </div>
 
-      <div class="cards" id="cards">
+      <div class="stage-wrap" id="stageWrap">
+        <button type="button" class="nav-arrow prev" id="galPrev" aria-label="Previous project">←</button>
+        <div class="stage" id="galStage"></div>
+        <button type="button" class="nav-arrow next" id="galNext" aria-label="Next project">→</button>
+      </div>
 
-        <article class="card" data-cat="commercial">
-          <div class="thumb t-commercial">BRI</div>
-          <div class="body">
-            <p class="cat">Commercial Case Study</p>
-            <h3>Customer Segmentation & Campaign Targeting at BRI</h3>
-            <p class="d">Segmented hundreds of thousands of customer records and analyzed campaign performance to improve targeting.</p>
-            <div class="result"><b>Key result</b>+15% conversion rate and +30% lead generation.</div>
-            <div class="tags"><span class="tag">SQL</span><span class="tag">Clustering</span><span class="tag">Campaign Analysis</span></div>
-            <button class="more">View details</button>
-            <div class="detail">
-              <h4>What I did</h4>
-              <ul>
-                <li>Segmented hundreds of thousands of customer records using SQL and clustering.</li>
-                <li>Analyzed customer behavior and campaign performance to optimize targeting.</li>
-                <li>Fed the findings into regional market strategy.</li>
-              </ul>
-              <h4>Result</h4>
-              <ul><li>Contributed to a 15% increase in conversion rates.</li><li>Boosted lead generation by 30%.</li></ul>
-            </div>
+      <div class="gal-info" aria-live="polite">
+        <p class="gal-cat" id="galCat"></p>
+        <h3 id="galTitle"></h3>
+        <p class="gal-desc" id="galDesc"></p>
+        <div><span class="gal-res" id="galRes"></span></div>
+        <div class="gal-actions">
+          <button type="button" class="view-link" id="galOpen">View Project →</button>
+        </div>
+        <div class="gal-dots" id="galDots"></div>
+      </div>
+
+      <!-- Data source for gallery slides & detail modal -->
+      <div id="projectStore" style="display:none">
+
+        <article class="proj-item" data-cat="commercial" data-theme="t-commercial" data-metric="+15% Conversion & +30% Leads" data-badge="PT Bank Rakyat Indonesia" data-tags="SQL,Clustering,Campaign Analysis">
+          <p class="cat">Commercial Case Study</p>
+          <h3>Customer Segmentation & Campaign Targeting at BRI</h3>
+          <p class="d">Segmented hundreds of thousands of customer records using SQL and clustering, and analyzed campaign performance to sharpen regional targeting.</p>
+          <div class="result"><b>Key result</b>+15% conversion rate and +30% lead generation.</div>
+          <div class="detail">
+            <h4>What I did</h4>
+            <ul>
+              <li>Segmented hundreds of thousands of customer records using SQL and clustering.</li>
+              <li>Analyzed customer behavior and campaign performance to optimize targeting.</li>
+              <li>Fed the findings into regional market strategy.</li>
+            </ul>
+            <h4>Result</h4>
+            <ul><li>Contributed to a 15% increase in conversion rates.</li><li>Boosted lead generation by 30%.</li></ul>
           </div>
         </article>
 
-        <article class="card" data-cat="commercial">
-          <div class="thumb t-commercial">SF</div>
-          <div class="body">
-            <p class="cat">Commercial Case Study</p>
-            <h3>Regional Sales & Distributor Performance at Smartfren</h3>
-            <p class="d">Analyzed regional sales and activation data, evaluated campaigns, and monitored distributors and retailers.</p>
-            <div class="result"><b>Key result</b>12-18% quarterly activation growth supported, +20% user acquisition, 95% partner engagement.</div>
-            <div class="tags"><span class="tag">Sales Analytics</span><span class="tag">Distribution</span><span class="tag">Campaign Evaluation</span></div>
-            <button class="more">View details</button>
-            <div class="detail">
-              <h4>What I did</h4>
-              <ul>
-                <li>Analyzed regional sales and activation data.</li>
-                <li>Evaluated campaign effectiveness and optimized the acquisition strategy.</li>
-                <li>Monitored distributor and retailer performance and joined field activities at campuses, schools, and institutions.</li>
-              </ul>
-              <h4>Result</h4>
-              <ul><li>Supported 12-18% quarterly growth in activations.</li><li>Increased user acquisition by 20%.</li><li>Reached 95% partner engagement.</li></ul>
-            </div>
+        <article class="proj-item" data-cat="commercial" data-theme="t-commercial" data-metric="12–18% Quarterly Growth" data-badge="Smartfren Telecom" data-tags="Sales Analytics,Distribution,Campaign Evaluation">
+          <p class="cat">Commercial Case Study</p>
+          <h3>Regional Sales & Distributor Performance at Smartfren</h3>
+          <p class="d">Analyzed regional sales and activation data, evaluated acquisition campaigns, and monitored distributor and retailer performance across Malang.</p>
+          <div class="result"><b>Key result</b>12-18% quarterly activation growth supported, +20% user acquisition, 95% partner engagement.</div>
+          <div class="detail">
+            <h4>What I did</h4>
+            <ul>
+              <li>Analyzed regional sales and activation data.</li>
+              <li>Evaluated campaign effectiveness and optimized the acquisition strategy.</li>
+              <li>Monitored distributor and retailer performance and joined field activities at campuses, schools, and institutions.</li>
+            </ul>
+            <h4>Result</h4>
+            <ul><li>Supported 12-18% quarterly growth in activations.</li><li>Increased user acquisition by 20%.</li><li>Reached 95% partner engagement.</li></ul>
           </div>
         </article>
 
-        <article class="card" data-cat="commercial">
-          <div class="thumb t-commercial">PP</div>
-          <div class="body">
-            <p class="cat">Commercial Case Study</p>
-            <h3>Campus Campaign & Student Survey for Poplite</h3>
-            <p class="d">Surveyed students and ran a campus campaign for the Poplite app as a Campus Ambassador for Populix.</p>
-            <div class="result"><b>Key result</b>+25% app downloads.</div>
-            <div class="tags"><span class="tag">Survey</span><span class="tag">Campaign</span></div>
-            <button class="more">View details</button>
-            <div class="detail">
-              <h4>What I did</h4>
-              <ul><li>Surveyed 500+ students.</li><li>Ran a campus campaign for the Poplite app (Jan - Apr 2025).</li></ul>
-              <h4>Result</h4>
-              <ul><li>App downloads increased by 25%.</li></ul>
-            </div>
+        <article class="proj-item" data-cat="engineering" data-theme="t-ml" data-metric="JuKang ID Capstone" data-badge="Bangkit Academy • TensorFlow" data-tags="TensorFlow,RNN / LSTM,Recommendation">
+          <p class="cat">Machine Learning & Capstone</p>
+          <h3>JuKang ID: Smart Home Repair & Technician Recommendation App</h3>
+          <p class="d">Co-developed an AI-powered home repair application using TensorFlow (RNN & LSTM) and content-based filtering to match homeowners with verified technicians (Bangkit Academy MSIB Batch 7).</p>
+          <div class="result"><b>Key result</b>End-to-end ML recommendation engine built in Team C242-PS117.</div>
+          <div class="detail">
+            <h4>What I did</h4>
+            <ul>
+              <li>Built and trained deep learning models using TensorFlow (RNN and LSTM) alongside content-based filtering to match user repair requests with relevant service specialists.</li>
+              <li>Collaborated in a cross-functional capstone team (Team C242-PS117) across Machine Learning, Mobile Development, and Cloud Computing tracks.</li>
+            </ul>
+            <h4>Result</h4>
+            <ul><li>Delivered a working AI-driven technician matching pipeline for the JuKang ID application.</li></ul>
+            <a class="chip" href="https://github.com/Jukang-ID/JuKang-ID" target="_blank" rel="noopener">Code on GitHub</a>
           </div>
         </article>
 
-        <article class="card" data-cat="analytics">
-          <div class="thumb t-analytics">HR</div>
-          <div class="body">
-            <p class="cat">Business Analytics</p>
-            <h3>HR Analytics: Employee Attrition</h3>
-            <p class="d">Analyzed 1,470 employee records and built a model to flag attrition risk (Dicoding x DBS Banking Program, 2025).</p>
-            <div class="result"><b>Key result</b>12.18% turnover; ages 25-34 carried the highest attrition risk.</div>
-            <div class="tags"><span class="tag">Tableau</span><span class="tag">Python</span><span class="tag">scikit-learn</span></div>
-            <button class="more">View details</button>
-            <div class="detail">
-              <h4>What I did</h4>
-              <ul>
-                <li>Analyzed 1,470 employee records and 179 attrition cases by department, age, gender, education field, and job satisfaction.</li>
-                <li>Built a Random Forest classification model with a prediction script to flag attrition risk.</li>
-              </ul>
-              <h4>Result</h4>
-              <ul><li>12.18% turnover rate; ages 25-34 carried the highest risk, which supports targeted retention programs.</li></ul>
-              <a class="chip" href="https://github.com/Ninax70/hr-attrition-analysis" target="_blank" rel="noopener">Code on GitHub</a>
-              <a class="chip" href="https://bit.ly/Hadi-BaskoroPortofolio" target="_blank" rel="noopener">Dashboard</a>
-            </div>
+        <article class="proj-item" data-cat="analytics" data-theme="t-analytics" data-metric="12.18% Turnover Rate" data-badge="Tableau • Random Forest" data-tags="Tableau,Python,scikit-learn">
+          <p class="cat">Business Analytics</p>
+          <h3>HR Analytics: Employee Attrition</h3>
+          <p class="d">Analyzed 1,470 employee records and built a Random Forest classification model with an interactive Tableau dashboard to flag attrition risk.</p>
+          <div class="result"><b>Key result</b>12.18% turnover; ages 25-34 carried the highest attrition risk.</div>
+          <div class="detail">
+            <h4>What I did</h4>
+            <ul>
+              <li>Analyzed 1,470 employee records and 179 attrition cases by department, age, gender, education field, and job satisfaction.</li>
+              <li>Built a Random Forest classification model with a prediction script to flag attrition risk.</li>
+            </ul>
+            <h4>Result</h4>
+            <ul><li>12.18% turnover rate; ages 25-34 carried the highest risk, which supports targeted retention programs.</li></ul>
+            <a class="chip" href="https://github.com/Ninax70/hr-attrition-analysis" target="_blank" rel="noopener">Code on GitHub</a>
+            <a class="chip" href="https://bit.ly/Hadi-BaskoroPortofolio" target="_blank" rel="noopener">Dashboard</a>
           </div>
         </article>
 
-        <article class="card" data-cat="analytics">
-          <div class="thumb t-analytics">SP</div>
-          <div class="body">
-            <p class="cat">Business Analytics</p>
-            <h3>Student Performance Dashboard: Dropout Analysis</h3>
-            <p class="d">Interactive dashboard on 4,424 students with an early-intervention recommendation (Dicoding x DBS Banking Program, 2025).</p>
-            <div class="result"><b>Key result</b>32.12% dropout rate surfaced, with an early-warning recommendation.</div>
-            <div class="tags"><span class="tag">Streamlit</span><span class="tag">Python</span></div>
-            <button class="more">View details</button>
-            <div class="detail">
-              <h4>What I did</h4>
-              <ul>
-                <li>Built an interactive dashboard with filters for status, course, attendance, and gender.</li>
-                <li>Recommended an early-intervention system triggered by a first-semester grade decline.</li>
-              </ul>
-              <h4>Result</h4>
-              <ul><li>Analyzed 4,424 students and surfaced a 32.12% dropout rate.</li></ul>
-              <a class="chip" href="https://student-performance-analyst-hadhi98.streamlit.app" target="_blank" rel="noopener">Live app</a>
-            </div>
+        <article class="proj-item" data-cat="analytics" data-theme="t-analytics" data-metric="32.12% Dropout Surfaced" data-badge="Streamlit • Python" data-tags="Streamlit,Python,EDA">
+          <p class="cat">Business Analytics</p>
+          <h3>Student Performance Dashboard: Dropout Analysis</h3>
+          <p class="d">Interactive Streamlit dashboard analyzing 4,424 student records with an early-warning intervention framework triggered by first-semester grade drops.</p>
+          <div class="result"><b>Key result</b>32.12% dropout rate surfaced, with an early-warning recommendation.</div>
+          <div class="detail">
+            <h4>What I did</h4>
+            <ul>
+              <li>Built an interactive dashboard with filters for status, course, attendance, and gender.</li>
+              <li>Recommended an early-intervention system triggered by a first-semester grade decline.</li>
+            </ul>
+            <h4>Result</h4>
+            <ul><li>Analyzed 4,424 students and surfaced a 32.12% dropout rate.</li></ul>
+            <a class="chip" href="https://student-performance-analyst-hadhi98.streamlit.app" target="_blank" rel="noopener">Live app</a>
           </div>
         </article>
 
-        <article class="card" data-cat="engineering">
-          <div class="thumb t-engineering">ETL</div>
-          <div class="body">
-            <p class="cat">Data Engineering</p>
-            <h3>Fashion Product ETL Pipeline</h3>
-            <p class="d">Scraped, cleaned, and loaded product data with Python (Dicoding, 2025).</p>
-            <div class="result"><b>Key result</b>867 clean records with 0 nulls and 0 duplicates.</div>
-            <div class="tags"><span class="tag">Python</span><span class="tag">pandas</span><span class="tag">ETL</span></div>
-            <button class="more">View details</button>
-            <div class="detail">
-              <h4>What I did</h4>
-              <ul>
-                <li>Scraped 1,000 product records.</li>
-                <li>Cleaned them with pandas (unknown products, invalid ratings, 99 duplicates, 33 missing prices).</li>
-                <li>Converted USD to IDR and loaded the result to CSV and Google Sheets.</li>
-              </ul>
-              <h4>Result</h4>
-              <ul><li>867 clean records with 0 nulls and 0 duplicates.</li></ul>
-              <a class="chip" href="https://github.com/Ninax70/fashion-product-etl-pipeline" target="_blank" rel="noopener">Code on GitHub</a>
-            </div>
+        <article class="proj-item" data-cat="engineering" data-theme="t-engineering" data-metric="867 Clean Records" data-badge="Python ETL • Google Sheets" data-tags="Python,pandas,ETL">
+          <p class="cat">Data Engineering</p>
+          <h3>Fashion Product ETL Pipeline</h3>
+          <p class="d">Automated web-scraping, cleaning, currency conversion (USD to IDR), and multi-destination loading pipeline built with modular Python and pandas.</p>
+          <div class="result"><b>Key result</b>867 clean records with 0 nulls and 0 duplicates.</div>
+          <div class="detail">
+            <h4>What I did</h4>
+            <ul>
+              <li>Scraped 1,000 product records.</li>
+              <li>Cleaned them with pandas (unknown products, invalid ratings, 99 duplicates, 33 missing prices).</li>
+              <li>Converted USD to IDR and loaded the result to CSV and Google Sheets.</li>
+            </ul>
+            <h4>Result</h4>
+            <ul><li>867 clean records with 0 nulls and 0 duplicates.</li></ul>
+            <a class="chip" href="https://github.com/Ninax70/fashion-product-etl-pipeline" target="_blank" rel="noopener">Code on GitHub</a>
+          </div>
+        </article>
+
+        <article class="proj-item" data-cat="commercial" data-theme="t-commercial" data-metric="+25% App Downloads" data-badge="Poplite by Populix" data-tags="Survey,Campaign,Market Research">
+          <p class="cat">Commercial Case Study</p>
+          <h3>Campus Campaign & Student Survey for Poplite</h3>
+          <p class="d">Surveyed 500+ university students and executed a targeted campus activation campaign for the Poplite research app.</p>
+          <div class="result"><b>Key result</b>+25% app downloads across campus campaign period.</div>
+          <div class="detail">
+            <h4>What I did</h4>
+            <ul><li>Surveyed 500+ students.</li><li>Ran a campus campaign for the Poplite app (Jan - Apr 2025).</li></ul>
+            <h4>Result</h4>
+            <ul><li>App downloads increased by 25%.</li></ul>
           </div>
         </article>
 
@@ -600,7 +662,7 @@ section.alt{background:var(--surface)}
       <h2>My Analyst Toolkit</h2>
       <div class="skills" style="margin-top:22px">
         <div class="skillbox"><h3>Business & Commercial</h3><div class="tags"><span class="tag">Campaign Analysis</span><span class="tag">Customer Segmentation</span><span class="tag">Sales & Activation Analysis</span><span class="tag">Market Research</span><span class="tag">Lead Generation</span><span class="tag">Distributor Monitoring</span></div></div>
-        <div class="skillbox"><h3>Tools & Languages</h3><div class="tags"><span class="tag">SQL</span><span class="tag">Python (pandas)</span><span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">Streamlit</span><span class="tag">Advanced Excel</span><span class="tag">Google Sheets API</span></div></div>
+        <div class="skillbox"><h3>Tools & Languages</h3><div class="tags"><span class="tag">SQL</span><span class="tag">Python (pandas)</span><span class="tag">TensorFlow</span><span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">Streamlit</span><span class="tag">Advanced Excel</span><span class="tag">Google Sheets API</span></div></div>
         <div class="skillbox"><h3>Analytics Methods</h3><div class="tags"><span class="tag">Exploratory Analysis</span><span class="tag">Statistical Analysis</span><span class="tag">Regression</span><span class="tag">Classification</span><span class="tag">Clustering</span><span class="tag">Data Validation</span></div></div>
         <div class="skillbox"><h3>Soft Skills</h3><div class="tags"><span class="tag">Cross-functional Coordination</span><span class="tag">Stakeholder Communication</span><span class="tag">Public Speaking</span><span class="tag">Agile/Scrum</span><span class="tag">Project Management</span></div></div>
       </div>
@@ -758,31 +820,132 @@ section.alt{background:var(--surface)}
   });
   syncTheme();
 
+  /* Work Gallery 3D Coverflow Carousel */
+  var allItems=Array.prototype.slice.call(document.querySelectorAll('#projectStore .proj-item'));
+  var stage=document.getElementById('galStage');
+  var dotsEl=document.getElementById('galDots');
+  var dlg=document.getElementById('dlg');
+  var activeItems=allItems.slice();
+  var idx=0;
+
+  function openProjectModal(item){
+    document.getElementById('dlgCat').textContent=item.querySelector('.cat').textContent;
+    document.getElementById('dlgTitle').textContent=item.querySelector('h3').textContent;
+    var res=item.querySelector('.result').outerHTML;
+    document.getElementById('dlgBody').innerHTML=res+item.querySelector('.detail').innerHTML;
+    if(dlg.showModal){dlg.showModal();}else{dlg.setAttribute('open','');}
+  }
+
+  function renderGallery(){
+    stage.innerHTML='';
+    dotsEl.innerHTML='';
+    var n=activeItems.length;
+    if(!n) return;
+    if(idx>=n) idx=0;
+    if(idx<0) idx=n-1;
+
+    activeItems.forEach(function(item, i){
+      var slide=document.createElement('div');
+      slide.className='slide';
+      var theme=item.getAttribute('data-theme')||'t-commercial';
+      var metric=item.getAttribute('data-metric')||'';
+      var badge=item.getAttribute('data-badge')||'';
+      var tags=(item.getAttribute('data-tags')||'').split(',').filter(Boolean);
+      var imgSrc=item.getAttribute('data-img');
+
+      if(imgSrc){
+        slide.innerHTML='<img src="'+imgSrc+'" alt="'+item.querySelector('h3').textContent+'">';
+      }else{
+        var tagHtml=tags.map(function(t){return '<span>'+t+'</span>';}).join('');
+        slide.innerHTML=
+          '<div class="slide-cover '+theme+'">'+
+            '<span class="pill">'+badge+'</span>'+
+            '<div><div class="metric">'+metric+'</div><p class="caption">'+item.querySelector('h3').textContent+'</p></div>'+
+            '<div class="mini-tags">'+tagHtml+'</div>'+
+          '</div>';
+      }
+
+      /* Circular offset relative to active index */
+      var diff=i-idx;
+      if(n>2){
+        if(diff>n/2) diff-=n;
+        if(diff<-n/2) diff+=n;
+      }
+
+      var abs=Math.abs(diff);
+      if(abs>2){
+        slide.style.opacity='0';
+        slide.style.pointerEvents='none';
+        slide.style.transform='translateX('+(diff*140)+'px) scale(0.65)';
+        slide.style.zIndex='1';
+      }else{
+        var tx=diff*175;
+        var sc=diff===0?1:(abs===1?0.84:0.7);
+        var op=diff===0?1:(abs===1?0.85:0.5);
+        slide.style.transform='translateX('+tx+'px) scale('+sc+')';
+        slide.style.opacity=String(op);
+        slide.style.zIndex=String(10-abs);
+        slide.style.filter=diff===0?'none':'brightness(0.94)';
+      }
+
+      slide.addEventListener('click',function(){
+        if(i===idx){openProjectModal(item);}
+        else{idx=i; renderGallery();}
+      });
+      stage.appendChild(slide);
+
+      var dot=document.createElement('button');
+      dot.type='button';
+      dot.setAttribute('aria-label','Go to project '+(i+1));
+      if(i===idx) dot.classList.add('active');
+      dot.addEventListener('click',function(){idx=i; renderGallery();});
+      dotsEl.appendChild(dot);
+    });
+
+    var cur=activeItems[idx];
+    document.getElementById('galCat').textContent=cur.querySelector('.cat').textContent;
+    document.getElementById('galTitle').textContent=cur.querySelector('h3').textContent;
+    document.getElementById('galDesc').textContent=cur.querySelector('.d').textContent;
+    document.getElementById('galRes').textContent=cur.querySelector('.result').textContent.replace(/^Key result/i,'Key Result: ');
+  }
+
+  document.getElementById('galPrev').addEventListener('click',function(){
+    idx=(idx-1+activeItems.length)%activeItems.length;
+    renderGallery();
+  });
+  document.getElementById('galNext').addEventListener('click',function(){
+    idx=(idx+1)%activeItems.length;
+    renderGallery();
+  });
+  document.getElementById('galOpen').addEventListener('click',function(){
+    if(activeItems[idx]) openProjectModal(activeItems[idx]);
+  });
+
+  /* Touch swipe support */
+  var touchX=0;
+  stage.addEventListener('touchstart',function(e){touchX=e.changedTouches[0].clientX;},{passive:true});
+  stage.addEventListener('touchend',function(e){
+    var dx=e.changedTouches[0].clientX-touchX;
+    if(Math.abs(dx)>40){
+      idx=dx<0?(idx+1)%activeItems.length:(idx-1+activeItems.length)%activeItems.length;
+      renderGallery();
+    }
+  },{passive:true});
+
   var buttons=document.querySelectorAll('.filters button');
-  var cards=document.querySelectorAll('#cards .card');
   buttons.forEach(function(b){
     b.addEventListener('click',function(){
-      buttons.forEach(function(x){x.classList.remove('active')});
+      buttons.forEach(function(x){x.classList.remove('active');});
       b.classList.add('active');
       var f=b.getAttribute('data-filter');
-      cards.forEach(function(c){
-        c.classList.toggle('hide', f!=='all' && c.getAttribute('data-cat')!==f);
-      });
+      activeItems=f==='all'?allItems.slice():allItems.filter(function(it){return it.getAttribute('data-cat')===f;});
+      idx=0;
+      renderGallery();
     });
   });
 
-  var dlg=document.getElementById('dlg');
-  cards.forEach(function(c){
-    var btn=c.querySelector('.more');
-    if(!btn) return;
-    btn.addEventListener('click',function(){
-      document.getElementById('dlgCat').textContent=c.querySelector('.cat').textContent;
-      document.getElementById('dlgTitle').textContent=c.querySelector('h3').textContent;
-      var res=c.querySelector('.result').outerHTML;
-      document.getElementById('dlgBody').innerHTML=res+c.querySelector('.detail').innerHTML;
-      if(dlg.showModal){dlg.showModal();}else{dlg.setAttribute('open','');}
-    });
-  });
+  renderGallery();
+
   document.getElementById('dlgClose').addEventListener('click',function(){dlg.close();});
   dlg.addEventListener('click',function(e){if(e.target===dlg){dlg.close();}});
 
