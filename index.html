@@ -662,7 +662,6 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
       <div class="contact">
         <div class="info">
           <div><small>Location</small>Malang, East Java, Indonesia</div>
-          <div><small>Email</small><a href="mailto:baskorohadi327@gmail.com">baskorohadi327@gmail.com</a></div>
           <div class="follow"><small>Follow me on</small>
             <div class="social">
               <a href="https://linkedin.com/in/hadhibaskoro" target="_blank" rel="noopener" aria-label="LinkedIn" data-ga-event="social_linkedin_click"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
@@ -683,7 +682,7 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
             <span>Send Message</span>
           </button>
           <p class="msg" id="formMsg" role="status"></p>
-          <small class="note">I’ll respond within 24-48 hours, or email me directly at <a href="mailto:baskorohadi327@gmail.com">baskorohadi327@gmail.com</a></small>
+          <small class="note">I’ll respond within 24-48 hours</small>
         </form>
       </div>
     </div>
@@ -923,14 +922,6 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
     msg.className='msg'; msg.textContent='';
     trackEvent('contact_form_submit', { status: 'attempt' });
     var fd=new FormData(form);
-    if(form.action.indexOf('YOUR_FORM_ID')!==-1){
-      /* Fallback until a Formspree ID is set: open the visitor's email app with the message filled in */
-      var body='From: '+fd.get('name')+' ('+fd.get('email')+')\n\n'+fd.get('message');
-      window.location.href='mailto:baskorohadi327@gmail.com?subject='+encodeURIComponent(fd.get('subject')||'Portfolio inquiry')+'&body='+encodeURIComponent(body);
-      msg.className='msg ok';
-      msg.textContent='Opening your email app with your message. If nothing opens, email me at baskorohadi327@gmail.com.';
-      return;
-    }
     var btn=form.querySelector('button[type=submit] span');
     btn.textContent='Sending...';
     fetch(form.action,{method:'POST',body:fd,headers:{'Accept':'application/json'}})
@@ -942,10 +933,10 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
           trackEvent('contact_form_submit', { status: 'success' });
         }else{
           msg.className='msg err';
-          msg.textContent='Something went wrong. Please try again or email me directly.';
+          msg.textContent='Something went wrong. Please try again or message me on LinkedIn.';
         }
       })
-      .catch(function(){msg.className='msg err'; msg.textContent='Network error. Please try again or email me directly.';})
+      .catch(function(){msg.className='msg err'; msg.textContent='Network error. Please try again or message me on LinkedIn.';})
       .then(function(){btn.textContent='Send Message';});
   });
 })();
