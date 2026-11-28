@@ -7,15 +7,14 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-XZ7E1ZLH1T');
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dwi Hadi Yulvi Baskoro | Commercial & Data Analyst Portfolio</title>
-<meta name="description" content="I turn sales and customer data into decisions a team can act on. Commercial and data analyst with 3+ years across telecommunications, banking, and operations.">
-<meta property="og:title" content="Dwi Hadi Yulvi Baskoro | Commercial & Data Analyst">
-<meta property="og:description" content="Sales, campaign, and customer analytics. Case studies and data projects.">
+<title>Dwi Hadi Yulvi Baskoro | Commercial Analyst Portfolio</title>
+<meta name="description" content="Commercial and data analyst with 3+ years across telecommunications, banking, and operations. Case studies in customer segmentation, campaign analysis, and sales analytics.">
+<meta property="og:title" content="Dwi Hadi Yulvi Baskoro | Commercial Analyst">
+<meta property="og:description" content="Customer segmentation, campaign analysis, and sales analytics. Case studies and data projects.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231f426f'/><text x='50' y='69' font-family='Georgia, Times New Roman, serif' font-size='54' font-weight='bold' fill='%23ffffff' text-anchor='middle'>HB</text></svg>">
 <script>
@@ -27,30 +26,17 @@ r.setAttribute('data-mode',m);r.setAttribute('data-accent',a||'navy');})();
 </script>
 <style>
 :root{
-  --bg:#ffffff;
-  --surface:#f4f7fc;
-  --hero-bg:#e8ecf2;
-  --text:#18263d;
-  --muted:#64748b;
-  --accent:#1f426f;
-  --accent-2:#4776a8;
-  --accent-soft:#e8eff8;
-  --border:#dce5f0;
-  --link:#315f99;
-  --grad-a:#1f3864;
-  --grad-b:#2f6fd6;
-  --stroke-col:rgba(24,38,61,0.34);
+  --bg:#ffffff; --surface:#f4f7fc; --hero-bg:#e8ecf2; --text:#18263d; --muted:#64748b;
+  --accent:#1f426f; --accent-2:#4776a8; --accent-soft:#e8eff8; --border:#dce5f0; --link:#315f99;
+  --grad-a:#1f3864; --grad-b:#2f6fd6; --stroke-col:rgba(24,38,61,0.34);
 }
-/* Accent themes (light) */
 html[data-accent=green]{--accent:#047857; --accent-2:#10b981; --accent-soft:#e6f6ef; --link:#059669; --grad-a:#064e3b; --grad-b:#10b981}
 html[data-accent=violet]{--accent:#5b21b6; --accent-2:#8b5cf6; --accent-soft:#efeafd; --link:#6d28d9; --grad-a:#4c1d95; --grad-b:#8b5cf6}
 html[data-accent=orange]{--accent:#c2410c; --accent-2:#f97316; --accent-soft:#fff1e6; --link:#ea580c; --grad-a:#7c2d12; --grad-b:#f97316}
-/* Dark mode */
 html[data-mode=dark]{
   color-scheme:dark;
   --bg:#0f1521; --surface:#171f2f; --hero-bg:#131b2b; --text:#e8ecf4; --muted:#9aa5ba; --border:#27334b;
-  --accent:#8fb2f0; --accent-2:#6ea0ff; --accent-soft:#1d2a44; --link:#8fb2f0;
-  --stroke-col:rgba(232,236,244,0.28);
+  --accent:#8fb2f0; --accent-2:#6ea0ff; --accent-soft:#1d2a44; --link:#8fb2f0; --stroke-col:rgba(232,236,244,0.28);
 }
 html[data-mode=dark][data-accent=green]{--accent:#6ee7b7; --accent-2:#34d399; --accent-soft:#12332a; --link:#6ee7b7}
 html[data-mode=dark][data-accent=violet]{--accent:#c4b5fd; --accent-2:#a78bfa; --accent-soft:#2a2146; --link:#c4b5fd}
@@ -58,30 +44,17 @@ html[data-mode=dark][data-accent=orange]{--accent:#fdba74; --accent-2:#fb923c; -
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth; scroll-padding-top:86px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.marquee-track{animation:none}}
 body{margin:0; background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.6; font-size:16px; overflow-x:hidden}
 a{color:var(--link)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
 .wrap{max-width:1080px; margin:0 auto; padding:0 20px}
 
-/* FLOATING PILL NAVBAR */
-header.pill-nav-wrap{
-  position:fixed; top:18px; left:0; right:0; z-index:50;
-  display:flex; justify-content:center; padding:0 16px; pointer-events:none;
-}
-.pill-nav{
-  pointer-events:auto;
-  display:flex; align-items:center; justify-content:space-between; gap:18px;
-  background:rgba(255,255,255,0.92); backdrop-filter:blur(12px);
-  border:1px solid var(--border); border-radius:16px;
-  padding:8px 14px; box-shadow:0 10px 30px rgba(15,23,42,.08);
-  max-width:960px; width:100%;
-}
+header.pill-nav-wrap{position:fixed; top:18px; left:0; right:0; z-index:50; display:flex; justify-content:center; padding:0 16px; pointer-events:none}
+.pill-nav{pointer-events:auto; display:flex; align-items:center; justify-content:space-between; gap:18px; background:rgba(255,255,255,0.92); backdrop-filter:blur(12px); border:1px solid var(--border); border-radius:16px; padding:8px 14px; box-shadow:0 10px 30px rgba(15,23,42,.08); max-width:960px; width:100%}
 html[data-mode=dark] .pill-nav{background:rgba(23,31,47,0.9)}
 .brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text); font-weight:800; font-size:13px; letter-spacing:.08em; text-transform:uppercase; white-space:nowrap}
-.brand-mark{
-  width:30px; height:30px; border-radius:8px; background:var(--text); color:var(--bg);
-  display:flex; align-items:center; justify-content:center;
-  font-family:Georgia,"Times New Roman",serif; font-size:13px; font-weight:700; letter-spacing:0;
-}
+.brand-mark{width:30px; height:30px; border-radius:8px; background:var(--text); color:var(--bg); display:flex; align-items:center; justify-content:center; font-family:Georgia,"Times New Roman",serif; font-size:13px; font-weight:700; letter-spacing:0}
 .pill-links{display:flex; align-items:center; gap:18px}
 .pill-links a{text-decoration:none; font-size:11.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--muted); transition:.15s}
 .pill-links a:hover{color:var(--text)}
@@ -89,107 +62,42 @@ html[data-mode=dark] .pill-nav{background:rgba(23,31,47,0.9)}
 .sw{width:14px; height:14px; border-radius:50%; border:2px solid var(--bg); padding:0; cursor:pointer}
 .sw[aria-pressed=true]{box-shadow:0 0 0 2px var(--accent)}
 #modeBtn{width:30px; height:30px; border-radius:8px; border:1px solid var(--border); background:transparent; color:var(--text); cursor:pointer; font-size:14px; display:flex; align-items:center; justify-content:center}
-.hire-pill{
-  text-decoration:none; font-size:12px; font-weight:700; color:var(--text);
-  border:1.5px solid var(--text); border-radius:10px; padding:7px 16px;
-  white-space:nowrap; transition:.15s;
-}
+.hire-pill{text-decoration:none; font-size:12px; font-weight:700; color:var(--text); border:1.5px solid var(--text); border-radius:10px; padding:7px 16px; white-space:nowrap; transition:.15s}
 .hire-pill:hover{background:var(--text); color:var(--bg)}
 
-/* KINETIC MARQUEE HERO */
-.kinetic-hero{
-  position:relative; min-height:92vh; padding-top:96px;
-  background:radial-gradient(circle at 50% 42%, var(--bg) 0%, var(--hero-bg) 100%);
-  display:flex; flex-direction:column; align-items:center; justify-content:flex-end;
-  overflow:hidden; border-bottom:1px solid var(--border);
-}
-.marquee-layer{
-  position:absolute; top:46%; left:0; width:100%; transform:translateY(-50%);
-  z-index:1; pointer-events:none; user-select:none; overflow:hidden;
-}
-.marquee-track{
-  display:flex; width:max-content;
-  animation:marqueeScroll 26s linear infinite;
-}
-.marquee-track span{
-  font-size:clamp(74px, 13.5vw, 185px);
-  font-weight:900;
-  letter-spacing:.04em;
-  text-transform:uppercase;
-  line-height:1;
-  color:transparent;
-  -webkit-text-stroke:1.6px var(--stroke-col);
-  padding-right:56px;
-  white-space:nowrap;
-}
-@keyframes marqueeScroll{
-  0%{transform:translateX(0)}
-  100%{transform:translateX(-50%)}
-}
-
-.portrait-stage{
-  position:relative; z-index:2;
-  display:flex; flex-direction:column; align-items:center; justify-content:flex-end;
-  width:100%; max-width:560px; margin:0 auto;
-  transition:transform .25s ease-out;
-}
-.portrait-frame{
-  width:min(430px, 84vw);
-  height:min(530px, 68vh);
-  display:flex; align-items:flex-end; justify-content:center;
-  position:relative;
-}
-.portrait-frame img{
-  width:100%; height:100%; object-fit:contain; object-position:bottom center;
-  filter:drop-shadow(0 18px 28px rgba(15,23,42,0.16));
-  display:block;
-}
-
-.hero-dock{
-  position:relative; z-index:4; width:100%;
-  background:linear-gradient(to top, var(--bg) 68%, rgba(255,255,255,0) 100%);
-  padding:28px 20px 26px; text-align:center;
-}
-html[data-mode=dark] .hero-dock{
-  background:linear-gradient(to top, var(--bg) 68%, rgba(15,21,33,0) 100%);
-}
-.hero-dock .role-line{
-  font-size:clamp(14px, 1.8vw, 17px); font-weight:700; letter-spacing:.06em; text-transform:uppercase;
-  color:var(--accent); margin:0 0 6px;
-}
-.hero-dock .sub-line{
-  font-size:15px; color:var(--muted); max-width:580px; margin:0 auto 16px;
-}
+.kinetic-hero{position:relative; min-height:92vh; padding-top:96px; background:radial-gradient(circle at 50% 42%, var(--bg) 0%, var(--hero-bg) 100%); display:flex; flex-direction:column; align-items:center; justify-content:flex-end; overflow:hidden; border-bottom:1px solid var(--border)}
+.marquee-layer{position:absolute; top:46%; left:0; width:100%; transform:translateY(-50%); z-index:1; pointer-events:none; user-select:none; overflow:hidden}
+.marquee-track{display:flex; width:max-content; animation:marqueeScroll 26s linear infinite}
+.marquee-track span{font-size:clamp(74px, 13.5vw, 185px); font-weight:900; letter-spacing:.04em; text-transform:uppercase; line-height:1; color:transparent; -webkit-text-stroke:1.6px var(--stroke-col); padding-right:56px; white-space:nowrap}
+@keyframes marqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.portrait-stage{position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; width:100%; max-width:560px; margin:0 auto; transition:transform .25s ease-out}
+.portrait-frame{width:min(430px, 84vw); height:min(530px, 68vh); display:flex; align-items:flex-end; justify-content:center; position:relative}
+.portrait-frame img{width:100%; height:100%; object-fit:contain; object-position:bottom center; filter:drop-shadow(0 18px 28px rgba(15,23,42,0.16)); display:block}
+.hero-dock{position:relative; z-index:4; width:100%; background:linear-gradient(to top, var(--bg) 68%, rgba(255,255,255,0) 100%); padding:28px 20px 26px; text-align:center}
+html[data-mode=dark] .hero-dock{background:linear-gradient(to top, var(--bg) 68%, rgba(15,21,33,0) 100%)}
+.hero-dock .role-line{font-size:clamp(14px, 1.8vw, 17px); font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); margin:0 0 6px}
+.hero-dock .sub-line{font-size:15px; color:var(--muted); max-width:620px; margin:0 auto 16px}
 .hero-actions{display:flex; justify-content:center; align-items:center; gap:12px; flex-wrap:wrap}
 .btn{display:inline-block; padding:11px 22px; border-radius:999px; text-decoration:none; font-weight:600; font-size:14.5px; border:1px solid var(--accent); color:var(--accent); background:var(--bg); cursor:pointer; font-family:inherit; transition:.15s}
 .btn.primary{background:var(--accent); color:var(--bg)}
 .btn:hover{transform:translateY(-1px)}
-
-.scroll-indicator{
-  position:absolute; right:26px; bottom:32px; z-index:5;
-  display:flex; flex-direction:column; align-items:center; gap:10px;
-  text-decoration:none; color:var(--muted); font-size:10px; font-weight:700;
-  letter-spacing:.22em; text-transform:uppercase;
-}
+.scroll-indicator{position:absolute; right:26px; bottom:32px; z-index:5; display:flex; flex-direction:column; align-items:center; gap:10px; text-decoration:none; color:var(--muted); font-size:10px; font-weight:700; letter-spacing:.22em; text-transform:uppercase}
 .scroll-indicator .line{width:1px; height:42px; background:var(--muted); opacity:.6}
 .scroll-indicator span{writing-mode:vertical-rl}
 
-/* SECTIONS */
 section{padding:56px 0}
 .eyebrow{color:var(--accent-2); font-weight:700; font-size:13px; letter-spacing:.08em; text-transform:uppercase; margin:0 0 4px}
 section h2{font-size:28px; margin:0 0 8px; line-height:1.2}
 section .sub{color:var(--muted); margin:0 0 26px; max-width:640px}
 .alt{background:var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border)}
 
-/* ABOUT */
 .about{display:grid; grid-template-columns:1.5fr 1fr; gap:32px; align-items:start}
 .about p{margin:0 0 14px}
 .about-stats{display:grid; gap:14px}
 .about-stats div{background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:16px; display:flex; align-items:center; gap:16px}
-.about-stats b{font-size:32px; color:var(--accent); min-width:52px}
+.about-stats b{font-size:30px; color:var(--accent); min-width:92px}
 .about-stats span{font-size:14px; color:var(--muted)}
 
-/* EXPERIENCE */
 .exp{display:grid; gap:16px}
 .expcard{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:20px; display:grid; grid-template-columns:56px 1fr; gap:16px}
 .logo-box{width:56px; height:56px; border-radius:12px; background:#ffffff; border:1px solid var(--border); color:var(--accent); font-weight:800; display:flex; align-items:center; justify-content:center; font-size:18px; overflow:hidden; padding:6px}
@@ -205,7 +113,6 @@ details summary{cursor:pointer; color:var(--link); font-size:14px; font-weight:6
 details ul{margin:8px 0 0; padding-left:20px}
 details li{margin-bottom:4px}
 
-/* WORK GALLERY (3D COVERFLOW CAROUSEL) */
 .gal-head{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:16px; margin-bottom:28px}
 .gal-head h2{font-size:clamp(32px,4vw,42px); font-weight:800; letter-spacing:-.02em; margin:0 0 6px}
 .gal-head .sub{margin:0}
@@ -213,35 +120,12 @@ details li{margin-bottom:4px}
 .filters button{font:inherit; font-size:13px; font-weight:600; padding:8px 16px; border-radius:10px; border:1px solid var(--border); background:var(--bg); color:var(--text); cursor:pointer; transition:.15s}
 .filters button:hover{border-color:var(--accent)}
 .filters button.active{background:var(--accent); color:var(--bg); border-color:var(--accent)}
-
 .stage-wrap{position:relative; margin:12px auto 0; user-select:none}
 .stage{position:relative; height:310px; display:flex; align-items:center; justify-content:center; overflow:hidden}
-.slide{
-  position:absolute;
-  width:min(460px, 78vw);
-  height:270px;
-  border-radius:18px;
-  overflow:hidden;
-  background:var(--bg);
-  border:1px solid var(--border);
-  box-shadow:0 18px 40px rgba(15,23,42,.18);
-  transition:transform .42s cubic-bezier(.22,1,.36,1), opacity .35s ease, filter .35s ease;
-  cursor:pointer;
-  display:flex;
-  flex-direction:column;
-}
+.slide{position:absolute; width:min(460px, 78vw); height:270px; border-radius:18px; overflow:hidden; background:var(--bg); border:1px solid var(--border); box-shadow:0 18px 40px rgba(15,23,42,.18); transition:transform .42s cubic-bezier(.22,1,.36,1), opacity .35s ease, filter .35s ease; cursor:pointer; display:flex; flex-direction:column}
 .slide img{width:100%; height:100%; object-fit:cover; display:block}
-.slide-cover{
-  width:100%; height:100%; padding:26px 28px; color:#fff;
-  display:flex; flex-direction:column; justify-content:space-between;
-  position:relative;
-}
-.slide-cover .pill{
-  align-self:flex-start;
-  font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
-  padding:5px 11px; border-radius:999px;
-  background:rgba(255,255,255,.16); backdrop-filter:blur(4px);
-}
+.slide-cover{width:100%; height:100%; padding:26px 28px; color:#fff; display:flex; flex-direction:column; justify-content:space-between; position:relative}
+.slide-cover .pill{align-self:flex-start; font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:5px 11px; border-radius:999px; background:rgba(255,255,255,.16); backdrop-filter:blur(4px)}
 .slide-cover .metric{font-size:clamp(28px,4vw,38px); font-weight:800; line-height:1.1; letter-spacing:-.02em; margin:10px 0 4px}
 .slide-cover .caption{font-size:14px; opacity:.9; margin:0}
 .slide-cover .mini-tags{display:flex; flex-wrap:wrap; gap:6px}
@@ -250,37 +134,25 @@ details li{margin-bottom:4px}
 .t-analytics{background:linear-gradient(135deg,#0f766e,#10b981)}
 .t-engineering{background:linear-gradient(135deg,#5b21b6,#8b5cf6)}
 .t-ml{background:linear-gradient(135deg,#9a3412,#ea580c)}
-
-.nav-arrow{
-  position:absolute; top:50%; transform:translateY(-50%); z-index:12;
-  width:42px; height:42px; border-radius:50%; border:1px solid var(--border);
-  background:var(--bg); color:var(--text); font-size:18px; font-weight:700;
-  display:flex; align-items:center; justify-content:center;
-  cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,.1); transition:.15s;
-}
+.nav-arrow{position:absolute; top:50%; transform:translateY(-50%); z-index:12; width:42px; height:42px; border-radius:50%; border:1px solid var(--border); background:var(--bg); color:var(--text); font-size:18px; font-weight:700; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 6px 18px rgba(0,0,0,.1); transition:.15s}
 .nav-arrow:hover{background:var(--accent); color:var(--bg); border-color:var(--accent)}
 .nav-arrow.prev{left:8px}
 .nav-arrow.next{right:8px}
-
 .gal-info{max-width:680px; margin:22px auto 0; text-align:center; padding:0 12px}
 .gal-info .gal-cat{font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--accent-2); margin:0 0 6px}
 .gal-info h3{font-size:clamp(22px,2.6vw,28px); font-weight:800; line-height:1.25; margin:0 0 10px; color:var(--text)}
 .gal-info .gal-desc{font-size:15.5px; color:var(--muted); margin:0 0 12px; line-height:1.65}
 .gal-info .gal-res{display:inline-block; background:var(--accent-soft); color:var(--accent); font-size:14px; font-weight:600; padding:6px 14px; border-radius:999px; margin-bottom:16px}
 .gal-info .gal-actions{display:flex; justify-content:center; align-items:center; gap:16px; flex-wrap:wrap}
-.view-link{
-  font:inherit; font-size:15px; font-weight:700; color:var(--text);
-  background:none; border:none; border-bottom:2px solid var(--text);
-  padding:2px 2px 4px; cursor:pointer; transition:.15s;
-}
+.view-link{font:inherit; font-size:15px; font-weight:700; color:var(--text); background:none; border:none; border-bottom:2px solid var(--text); padding:2px 2px 4px; cursor:pointer; transition:.15s}
 .view-link:hover{color:var(--accent); border-color:var(--accent)}
 .gal-dots{display:flex; justify-content:center; gap:8px; margin-top:20px}
 .gal-dots button{width:9px; height:9px; border-radius:999px; border:none; padding:0; background:var(--border); cursor:pointer; transition:.2s}
 .gal-dots button.active{width:24px; background:var(--accent)}
-
 .detail{display:none}
 .result{background:var(--accent-soft); border-radius:10px; padding:10px 12px; margin-bottom:12px; font-size:14px}
 .result b{display:block; font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--accent)}
+.fine{font-size:13px; color:var(--muted)}
 dialog{border:1px solid var(--border); border-radius:16px; padding:0; max-width:620px; width:calc(100% - 32px); background:var(--bg); color:var(--text)}
 dialog::backdrop{background:rgba(0,0,0,.5)}
 dialog .inner{padding:24px}
@@ -292,13 +164,12 @@ dialog ul{padding-left:20px}
 dialog .close{float:right; font:inherit; font-size:14px; padding:4px 12px; border-radius:8px; border:1px solid var(--border); background:var(--surface); color:var(--text); cursor:pointer}
 .chip{display:inline-block; padding:4px 12px; border-radius:999px; font-size:14px; text-decoration:none; background:var(--surface); color:var(--link); border:1px solid var(--border); margin:4px 8px 0 0}
 
-/* SKILLS */
 .skills{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px}
 .skillbox{background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:18px}
 .skillbox h3{margin:0 0 10px; font-size:16px}
 .skillbox .tag{background:var(--surface); color:var(--text); border:1px solid var(--border)}
+.skillbox .fine{margin:12px 0 0}
 
-/* EDUCATION + CERTS */
 .edu{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px}
 .edcard{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:20px}
 .ed-head{display:flex; align-items:center; gap:14px; margin-bottom:10px}
@@ -315,17 +186,16 @@ dialog .close{float:right; font:inherit; font-size:14px; padding:4px 12px; borde
 .cert h3{margin:2px 0 2px; font-size:16px; line-height:1.35}
 .cert p{margin:0; font-size:14px; color:var(--muted)}
 
-/* CONTACT */
 .contact{display:grid; grid-template-columns:1fr 1.2fr; gap:32px; align-items:start}
 .info div{margin-bottom:14px}
 .info small{display:block; font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted)}
 .form{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:20px; display:grid; gap:12px}
+.form .send{display:flex; align-items:center; justify-content:center; gap:8px; width:100%}
 .form label{font-size:14px; font-weight:600; display:grid; gap:4px}
 .form input,.form textarea{font:inherit; padding:10px 12px; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text); width:100%}
 .form textarea{min-height:110px; resize:vertical}
 .form small{color:var(--muted)}
 .row2{display:grid; grid-template-columns:1fr 1fr; gap:12px}
-.form .send{display:flex; align-items:center; justify-content:center; gap:8px; width:100%}
 .form .note{text-align:center; margin:0}
 .form .msg{margin:0; padding:10px 12px; border-radius:8px; font-size:14px; display:none}
 .form .msg.ok{display:block; background:#e3f6ec; color:#0f5132}
@@ -354,27 +224,23 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
   .nav-arrow{width:34px; height:34px; font-size:15px}
   .scroll-indicator{display:none}
 }
-@media (max-width:520px){
-  .row2{grid-template-columns:1fr}
-  .sw{display:none}
-}
+@media (max-width:520px){.sw{display:none}.row2{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
-<!-- FLOATING PILL HEADER -->
 <header class="pill-nav-wrap">
   <div class="pill-nav">
     <a class="brand" href="#" data-scroll-top>
       <span class="brand-mark">HB</span>
       <span>Hadi Baskoro</span>
     </a>
-    <nav class="pill-links">
+    <nav class="pill-links" aria-label="Main">
       <a href="#projects">Work</a>
-      <a href="#skills">What I Can Do</a>
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
-      <a href="#certificates">Trainings</a>
+      <a href="#skills">Skills</a>
+      <a href="#certificates">Credentials</a>
     </nav>
     <div class="pill-right">
       <button type="button" class="sw" data-accent="navy" style="background:#1f426f" aria-label="Navy theme" aria-pressed="true"></button>
@@ -389,168 +255,40 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
 
 <main>
 
-  <!-- KINETIC MARQUEE HERO -->
   <section class="kinetic-hero" id="hero">
     <div class="marquee-layer" id="marqueeLayer" aria-hidden="true">
       <div class="marquee-track">
-        <span>DWI HADI YULVI BASKORO • COMMERCIAL & DATA ANALYST •</span>
-        <span>DWI HADI YULVI BASKORO • COMMERCIAL & DATA ANALYST •</span>
+        <span>DWI HADI YULVI BASKORO • COMMERCIAL ANALYST •</span>
+        <span>DWI HADI YULVI BASKORO • COMMERCIAL ANALYST •</span>
       </div>
     </div>
-
     <div class="portrait-stage" id="portraitStage">
       <div class="portrait-frame">
         <img src="Foto%20Dwi%20Hadi%20Y.B.png" alt="Dwi Hadi Yulvi Baskoro">
       </div>
     </div>
-
     <div class="hero-dock">
-      <p class="role-line">Management Graduate • Commercial & Data Analyst</p>
-      <p class="sub-line">Turning customer data into commercial decisions — 3+ years across telecommunications, banking, and operations.</p>
+      <h1 class="role-line" style="font-size:clamp(14px,1.8vw,17px)">Commercial Analyst | SQL & Data Analytics</h1>
+      <p class="sub-line">I turn sales and customer data into commercial decisions. 3+ years across telecommunications, banking, and operations, with measurable results at BRI (+15% conversion, +30% leads) and Smartfren.</p>
       <div class="hero-actions">
-        <a class="btn primary" href="#projects" data-ga-event="explore_work_click">Explore Work</a>
+        <a class="btn primary" href="#projects" data-ga-event="explore_work_click">See My Work</a>
         <a class="btn" href="CV_Dwi_Hadi_Yulvi_Baskoro.pdf" target="_blank" rel="noopener" data-ga-event="download_resume_click">Download Resume</a>
       </div>
     </div>
-
-    <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+    <a href="#projects" class="scroll-indicator" aria-label="Scroll down">
       <div class="line"></div>
       <span>SCROLL DOWN</span>
     </a>
   </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="alt">
-    <div class="wrap">
-      <p class="eyebrow">About Me</p>
-      <h2>Where Business Questions Meet Data</h2>
-      <div class="about">
-        <div>
-          <p>I am a management graduate who is comfortable on both sides of the table: the commercial question and the data that answers it. At Smartfren, I analyzed regional sales and activation data and tracked distributor and retailer performance. At BRI, I segmented customer records in SQL to sharpen targeting.</p>
-          <p>I enjoy turning messy operational data into clean datasets, dashboards, and recommendations that sales and commercial teams can use. I completed my degree while working full-time, and I keep building skills in machine learning and cloud through Bangkit Academy and AWS re/Start.</p>
-          <p>I am looking for commercial analyst, business analysis, data analytics, and management trainee roles where I can grow into a future leader.</p>
-        </div>
-        <div class="about-stats">
-          <div><b>8</b><span>Roles & Programs</span></div>
-          <div><b>4</b><span>Data & ML Projects</span></div>
-          <div><b>3</b><span>Commercial Case Studies</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <div class="wrap">
-      <p class="eyebrow">Work Experience</p>
-      <h2>The Path I've Walked So Far</h2>
-      <p class="sub">From telecommunications and banking to operations and data.</p>
-      <div class="exp">
-
-        <div class="expcard"><div class="logo-box"><img src="Project/teman%20ambiss.png" alt="Teman Ambiss"></div><div>
-          <span class="date">Mar 2025 - Jul 2025</span>
-          <h3>Product Manager (Intern)</h3>
-          <p class="org">Teman Ambiss | Remote</p>
-          <p class="desc">Scoped a 3-module career program from user feedback and data, and coordinated marketing, design, and operations teams.</p>
-          <div class="tags"><span class="tag">Product Management</span><span class="tag">Cross-functional</span><span class="tag">Program Delivery</span></div>
-          <details><summary>View details</summary><ul><li>Ran a boot camp of 1,000+ registrants with 100% on-time execution.</li></ul></details>
-        </div></div>
-
-        <div class="expcard"><div class="logo-box"><img src="Project/codveda.png" alt="Codveda Technologies"></div><div>
-          <span class="date">Mar 2025 - May 2025</span>
-          <h3>Data Analyst</h3>
-          <p class="org">Codveda Technologies | Remote</p>
-          <p class="desc">Optimized data extraction and built a KPI dashboard for stakeholders.</p>
-          <div class="tags"><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Dashboard</span><span class="tag">Predictive Models</span></div>
-          <details><summary>View details</summary><ul>
-            <li>Cut data retrieval time by 20% with optimized SQL and Python.</li>
-            <li>Cleaned large datasets and built predictive models with 85% accuracy.</li>
-            <li>Built an interactive KPI dashboard that improved stakeholder decision-making efficiency by 30%.</li>
-          </ul></details>
-        </div></div>
-
-        <div class="expcard"><div class="logo-box"><img src="Project/Poplite%20.png" alt="Poplite by Populix"></div><div>
-          <span class="date">Jan 2025 - Apr 2025</span>
-          <h3>Campus Ambassador</h3>
-          <p class="org">Poplite by Populix</p>
-          <p class="desc">Surveyed 500+ students and ran a campaign that increased app downloads by 25%.</p>
-          <div class="tags"><span class="tag">Survey</span><span class="tag">Campaign</span><span class="tag">Market Research</span></div>
-        </div></div>
-
-        <div class="expcard"><div class="logo-box"><img src="Project/Idsurvey.png" alt="IDSURVEY"></div><div>
-          <span class="date">Sep 2024 - Dec 2024</span>
-          <h3>Operational Support & Data Processing (Contract)</h3>
-          <p class="org">IDSURVEY | Malang, Indonesia</p>
-          <p class="desc">Validated and prepared operational data for reporting.</p>
-          <div class="tags"><span class="tag">Data Validation</span><span class="tag">Workflow</span><span class="tag">Field Coordination</span></div>
-          <details><summary>View details</summary><ul>
-            <li>Managed and validated 10,000+ operational records at 98% accuracy.</li>
-            <li>Standardized the collection-to-reporting workflow, improving efficiency by 20%.</li>
-            <li>Coordinated with field teams to keep data consistent across projects.</li>
-          </ul></details>
-        </div></div>
-
-        <div class="expcard"><div class="logo-box"><img src="Project/Novo%20Club.jpg" alt="Novo Club by Paragon"></div><div>
-          <span class="date">Feb 2024 - Oct 2024</span>
-          <h3>Research Coordinator</h3>
-          <p class="org">Novo Club by Paragon, ParagonCorp | Malang, Indonesia</p>
-          <p class="desc">Coordinated research projects and data collection for up to 100 participants.</p>
-          <div class="tags"><span class="tag">Research</span><span class="tag">Coordination</span><span class="tag">Proposals</span></div>
-          <details><summary>View details</summary><ul>
-            <li>Coordinated end-to-end research and data collection at 98% accuracy, with 10-15 cross-functional meetings per month; insights informed project development.</li>
-            <li>Supported 3-5 project development proposals and kept all milestones on schedule.</li>
-          </ul></details>
-        </div></div>
-
-        <div class="expcard"><div class="logo-box">PU</div><div>
-          <span class="date">Aug 2023 - Aug 2024</span>
-          <h3>Operational Support - Records & Document Control (Contract)</h3>
-          <p class="org">CV Putro Utomo | Malang, Indonesia</p>
-          <p class="desc">Managed operational reports and audit-ready archives.</p>
-          <div class="tags"><span class="tag">Document Control</span><span class="tag">Reporting</span><span class="tag">Process Improvement</span></div>
-          <details><summary>View details</summary><ul>
-            <li>Managed 250+ operational reports and 1,000+ audit-ready archives, reducing documentation errors by 95%.</li>
-            <li>Raised on-time report submission from 85% to 98% by streamlining cross-department reporting.</li>
-          </ul></details>
-        </div></div>
-
-        <div class="expcard"><div class="logo-box"><img src="Project/BRI.png" alt="Bank BRI"></div><div>
-          <span class="date">Apr 2021 - Apr 2022</span>
-          <h3>Market & Strategic Analytics Associate</h3>
-          <p class="org">PT Bank Rakyat Indonesia (BRI) | Malang, Indonesia | Vendor contract</p>
-          <p class="desc">Customer segmentation and campaign analysis for regional market strategy.</p>
-          <div class="tags"><span class="tag">SQL</span><span class="tag">Clustering</span><span class="tag">Customer Analytics</span><span class="tag">Campaign Analysis</span></div>
-          <details><summary>View details</summary><ul>
-            <li>Segmented hundreds of thousands of customer records using SQL and clustering, contributing to a 15% increase in conversion rates.</li>
-            <li>Analyzed customer behavior and campaign performance to optimize targeting, boosting lead generation by 30%.</li>
-          </ul></details>
-        </div></div>
-
-        <div class="expcard"><div class="logo-box"><img src="Project/Smartfren-Logo.wine.png" alt="Smartfren Telecom"></div><div>
-          <span class="date">Mar 2019 - Feb 2021</span>
-          <h3>Business & Sales Analyst</h3>
-          <p class="org">Smartfren Telecom Tbk | Malang, Indonesia</p>
-          <p class="desc">Regional sales and activation analysis, campaign evaluation, and distributor monitoring.</p>
-          <div class="tags"><span class="tag">Sales Analytics</span><span class="tag">Campaign Evaluation</span><span class="tag">Distributor Monitoring</span></div>
-          <details><summary>View details</summary><ul>
-            <li>Analyzed regional sales and activation data, supporting 12-18% quarterly growth in activations.</li>
-            <li>Evaluated campaign effectiveness and optimized acquisition strategy, increasing user acquisition by 20%.</li>
-            <li>Monitored distributor and retailer performance (95% partner engagement) and joined field activities at campuses, schools, and institutions.</li>
-          </ul></details>
-        </div></div>
-
-      </div>
-    </div>
-  </section>
-
   <!-- PROJECTS (WORK GALLERY COVERFLOW) -->
-  <section id="projects" class="alt">
+  <section id="projects">
     <div class="wrap">
       <div class="gal-head">
         <div>
           <p class="eyebrow">Selected Work</p>
           <h2>Work Gallery</h2>
-          <p class="sub">Commercial case studies, analytics dashboards, data pipelines, and ML applications.</p>
+          <p class="sub">Two commercial case studies from my jobs, one campaign study, and four hands-on data projects. Company data is confidential, so case studies show method and outcome, not raw data.</p>
         </div>
         <div class="filters" role="group" aria-label="Filter projects">
           <button class="active" data-filter="all">All (7)</button>
@@ -577,23 +315,26 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
         <div class="gal-dots" id="galDots"></div>
       </div>
 
-      <!-- Data source for gallery slides & detail modal -->
       <div id="projectStore" style="display:none">
 
         <article class="proj-item" data-cat="commercial" data-theme="t-commercial" data-metric="+15% Conversion & +30% Leads" data-badge="PT Bank Rakyat Indonesia" data-tags="SQL,Clustering,Campaign Analysis">
           <p class="cat">Commercial Case Study</p>
           <h3>Customer Segmentation & Campaign Targeting at BRI</h3>
-          <p class="d">Segmented hundreds of thousands of customer records using SQL and clustering, and analyzed campaign performance to sharpen regional targeting.</p>
+          <p class="d">Segmented hundreds of thousands of customer records with SQL and clustering, then compared campaign performance across segments to sharpen regional targeting.</p>
           <div class="result"><b>Key result</b>+15% conversion rate and +30% lead generation.</div>
           <div class="detail">
-            <h4>What I did</h4>
+            <p class="fine">Apr 2021 to May 2022, vendor contract.</p>
+            <h4>Question</h4>
+            <p>Which customer groups should regional campaigns target to convert better?</p>
+            <h4>Approach</h4>
             <ul>
-              <li>Segmented hundreds of thousands of customer records using SQL and clustering.</li>
-              <li>Analyzed customer behavior and campaign performance to optimize targeting.</li>
+              <li>Segmented hundreds of thousands of customer records with SQL and clustering.</li>
+              <li>Analyzed customer behavior and campaign performance by segment.</li>
               <li>Fed the findings into regional market strategy.</li>
             </ul>
-            <h4>Result</h4>
+            <h4>Outcome</h4>
             <ul><li>Contributed to a 15% increase in conversion rates.</li><li>Boosted lead generation by 30%.</li></ul>
+            <!-- TODO: add baseline period and how the lift was measured -->
           </div>
         </article>
 
@@ -603,31 +344,30 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
           <p class="d">Analyzed regional sales and activation data, evaluated acquisition campaigns, and monitored distributor and retailer performance across Malang.</p>
           <div class="result"><b>Key result</b>12-18% quarterly activation growth supported, +20% user acquisition, 95% partner engagement.</div>
           <div class="detail">
-            <h4>What I did</h4>
+            <p class="fine">Mar 2019 to Feb 2021.</p>
+            <h4>Question</h4>
+            <p>Where are activations growing or stalling, and which campaigns and partners drive them?</p>
+            <h4>Approach</h4>
             <ul>
               <li>Analyzed regional sales and activation data.</li>
               <li>Evaluated campaign effectiveness and optimized the acquisition strategy.</li>
               <li>Monitored distributor and retailer performance and joined field activities at campuses, schools, and institutions.</li>
             </ul>
-            <h4>Result</h4>
+            <h4>Outcome</h4>
             <ul><li>Supported 12-18% quarterly growth in activations.</li><li>Increased user acquisition by 20%.</li><li>Reached 95% partner engagement.</li></ul>
           </div>
         </article>
 
-        <article class="proj-item" data-cat="engineering" data-theme="t-ml" data-metric="JuKang ID Capstone" data-badge="Bangkit Academy • TensorFlow" data-tags="TensorFlow,RNN / LSTM,Recommendation">
-          <p class="cat">Machine Learning & Capstone</p>
-          <h3>JuKang ID: Smart Home Repair & Technician Recommendation App</h3>
-          <p class="d">Co-developed an AI-powered home repair application using TensorFlow (RNN & LSTM) and content-based filtering to match homeowners with verified technicians (Bangkit Academy MSIB Batch 7).</p>
-          <div class="result"><b>Key result</b>End-to-end ML recommendation engine built in Team C242-PS117.</div>
+        <article class="proj-item" data-cat="commercial" data-theme="t-commercial" data-metric="+25% App Downloads" data-badge="Poplite by Populix" data-tags="Survey,Campaign,Market Research">
+          <p class="cat">Commercial Case Study</p>
+          <h3>Campus Campaign & Student Survey for Poplite</h3>
+          <p class="d">Surveyed 500+ university students and executed a targeted campus activation campaign for the Poplite research app.</p>
+          <div class="result"><b>Key result</b>+25% app downloads across the campus campaign period.</div>
           <div class="detail">
-            <h4>What I did</h4>
-            <ul>
-              <li>Built and trained deep learning models using TensorFlow (RNN and LSTM) alongside content-based filtering to match user repair requests with relevant service specialists.</li>
-              <li>Collaborated in a cross-functional capstone team (Team C242-PS117) across Machine Learning, Mobile Development, and Cloud Computing tracks.</li>
-            </ul>
-            <h4>Result</h4>
-            <ul><li>Delivered a working AI-driven technician matching pipeline for the JuKang ID application.</li></ul>
-            <a class="chip" href="https://github.com/Jukang-ID/JuKang-ID" target="_blank" rel="noopener">Code on GitHub</a>
+            <h4>Approach</h4>
+            <ul><li>Surveyed 500+ students.</li><li>Ran a campus campaign for the Poplite app (Jan - Apr 2025).</li></ul>
+            <h4>Outcome</h4>
+            <ul><li>App downloads increased by 25%.</li></ul>
           </div>
         </article>
 
@@ -637,15 +377,15 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
           <p class="d">Analyzed 1,470 employee records and built a Random Forest classification model with an interactive Tableau dashboard to flag attrition risk.</p>
           <div class="result"><b>Key result</b>12.18% turnover; ages 25-34 carried the highest attrition risk.</div>
           <div class="detail">
-            <h4>What I did</h4>
+            <h4>Approach</h4>
             <ul>
               <li>Analyzed 1,470 employee records and 179 attrition cases by department, age, gender, education field, and job satisfaction.</li>
               <li>Built a Random Forest classification model with a prediction script to flag attrition risk.</li>
             </ul>
-            <h4>Result</h4>
+            <h4>Finding</h4>
             <ul><li>12.18% turnover rate; ages 25-34 carried the highest risk, which supports targeted retention programs.</li></ul>
             <a class="chip" href="https://github.com/Ninax70/hr-attrition-analysis" target="_blank" rel="noopener">Code on GitHub</a>
-            <a class="chip" href="https://bit.ly/Hadi-BaskoroPortofolio" target="_blank" rel="noopener">Dashboard</a>
+            <a class="chip" href="https://bit.ly/Hadi-BaskoroPortofolio" target="_blank" rel="noopener">Tableau dashboard</a>
           </div>
         </article>
 
@@ -655,12 +395,12 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
           <p class="d">Interactive Streamlit dashboard analyzing 4,424 student records with an early-warning intervention framework triggered by first-semester grade drops.</p>
           <div class="result"><b>Key result</b>32.12% dropout rate surfaced, with an early-warning recommendation.</div>
           <div class="detail">
-            <h4>What I did</h4>
+            <h4>Approach</h4>
             <ul>
               <li>Built an interactive dashboard with filters for status, course, attendance, and gender.</li>
               <li>Recommended an early-intervention system triggered by a first-semester grade decline.</li>
             </ul>
-            <h4>Result</h4>
+            <h4>Finding</h4>
             <ul><li>Analyzed 4,424 students and surfaced a 32.12% dropout rate.</li></ul>
             <a class="chip" href="https://student-performance-analyst-hadhi98.streamlit.app" target="_blank" rel="noopener">Live app</a>
           </div>
@@ -672,51 +412,190 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
           <p class="d">Automated web-scraping, cleaning, currency conversion (USD to IDR), and multi-destination loading pipeline built with modular Python and pandas.</p>
           <div class="result"><b>Key result</b>867 clean records with 0 nulls and 0 duplicates.</div>
           <div class="detail">
-            <h4>What I did</h4>
+            <h4>Approach</h4>
             <ul>
               <li>Scraped 1,000 product records.</li>
               <li>Cleaned them with pandas (unknown products, invalid ratings, 99 duplicates, 33 missing prices).</li>
               <li>Converted USD to IDR and loaded the result to CSV and Google Sheets.</li>
             </ul>
-            <h4>Result</h4>
+            <h4>Outcome</h4>
             <ul><li>867 clean records with 0 nulls and 0 duplicates.</li></ul>
             <a class="chip" href="https://github.com/Ninax70/fashion-product-etl-pipeline" target="_blank" rel="noopener">Code on GitHub</a>
           </div>
         </article>
 
-        <article class="proj-item" data-cat="commercial" data-theme="t-commercial" data-metric="+25% App Downloads" data-badge="Poplite by Populix" data-tags="Survey,Campaign,Market Research">
-          <p class="cat">Commercial Case Study</p>
-          <h3>Campus Campaign & Student Survey for Poplite</h3>
-          <p class="d">Surveyed 500+ university students and executed a targeted campus activation campaign for the Poplite research app.</p>
-          <div class="result"><b>Key result</b>+25% app downloads across campus campaign period.</div>
+        <article class="proj-item" data-cat="engineering" data-theme="t-ml" data-metric="JuKang ID Capstone" data-badge="Bangkit Academy • TensorFlow" data-tags="TensorFlow,RNN / LSTM,Recommendation">
+          <p class="cat">Machine Learning & Capstone</p>
+          <h3>JuKang ID: Technician Recommendation App</h3>
+          <p class="d">Bangkit Academy capstone (Team C242-PS117): an AI-powered home repair app that matches homeowners with verified technicians, using TensorFlow (RNN and LSTM) and content-based filtering.</p>
+          <div class="result"><b>Key result</b>Delivered a working recommendation pipeline for the app.</div>
           <div class="detail">
-            <h4>What I did</h4>
-            <ul><li>Surveyed 500+ students.</li><li>Ran a campus campaign for the Poplite app (Jan - Apr 2025).</li></ul>
-            <h4>Result</h4>
-            <ul><li>App downloads increased by 25%.</li></ul>
+            <h4>My role</h4>
+            <p>Member of the Machine Learning path, working with Mobile Development and Cloud Computing students in a cross-functional team.</p>
+            <h4>Approach</h4>
+            <ul><li>Built and trained TensorFlow models (RNN and LSTM) alongside content-based filtering to match repair requests with relevant service specialists.</li></ul>
+            <a class="chip" href="https://github.com/Jukang-ID/JuKang-ID" target="_blank" rel="noopener">Code on GitHub</a>
           </div>
         </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="alt">
+    <div class="wrap">
+      <p class="eyebrow">About Me</p>
+      <h2>Where Business Questions Meet Data</h2>
+      <div class="about">
+        <div>
+          <p>I am a management graduate who turns sales and customer data into decisions commercial teams can act on. At BRI, I segmented hundreds of thousands of customer records with SQL and clustering, contributing to a 15% lift in conversion and 30% more leads. At Smartfren, I tracked regional activations and distributor performance, supporting 12–18% quarterly activation growth.</p>
+          <p>I finished my Bachelor of Management in February 2026 while working full-time, and I back my analysis with Python, Tableau, and cloud training (Bangkit Academy, AWS re/Start).</p>
+          <p>I am looking for Commercial Analyst roles, and I am open to business analysis, data analytics, and management trainee roles.</p>
+        </div>
+        <div class="about-stats">
+          <div><b>3+</b><span>Years in sales, customer, and operational analytics</span></div>
+          <div><b>10,000+</b><span>Operational records validated at 98% accuracy</span></div>
+          <div><b>500+</b><span>Students surveyed for the Poplite campaign</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="wrap">
+      <p class="eyebrow">Work Experience</p>
+      <h2>The Path I’ve Walked So Far</h2>
+      <p class="sub">Latest first. Several 2024 to 2025 roles ran in parallel as internships, contracts, and part-time work.</p>
+      <div class="exp">
+
+        <div class="expcard"><div class="logo-box"><img src="Project/teman%20ambiss.png" alt="Teman Ambiss"></div><div>
+          <span class="date">Mar 2025 - Jul 2025</span>
+          <h3>Product Manager (Intern)</h3>
+          <p class="org">Teman Ambiss | Remote</p>
+          <p class="desc">Scoped a 3-module career program from user feedback and data, and coordinated marketing, design, and operations teams.</p>
+          <div class="tags"><span class="tag">Product Management</span><span class="tag">Cross-functional</span><span class="tag">Program Delivery</span></div>
+          <details><summary>View details</summary><ul><li>Ran the Career Boost boot camp for 1,000+ registrants with 100% on-time execution.</li></ul></details>
+        </div></div>
+
+        <div class="expcard"><div class="logo-box"><img src="Project/codveda.png" alt="Codveda Technologies"></div><div>
+          <span class="date">Mar 2025 - May 2025</span>
+          <h3>Data Analyst (Intern)</h3>
+          <p class="org">Codveda Technologies | Remote</p>
+          <p class="desc">Optimized data extraction and built a KPI dashboard for stakeholders.</p>
+          <div class="tags"><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Tableau</span><span class="tag">Predictive Models</span></div>
+          <details><summary>View details</summary><ul>
+            <li>Cut data retrieval time by 20% with optimized SQL and Python.</li>
+            <li>Cleaned large datasets and built predictive models with 85% accuracy.</li>
+            <li>Built a Tableau KPI dashboard that improved stakeholder decision-making efficiency by 30%.</li>
+          </ul></details>
+        </div></div>
+
+        <div class="expcard"><div class="logo-box"><img src="Project/Poplite%20.png" alt="Poplite by Populix"></div><div>
+          <span class="date">Jan 2025 - Apr 2025</span>
+          <h3>Campus Ambassador</h3>
+          <p class="org">Poplite by Populix</p>
+          <p class="desc">Surveyed 500+ students and ran a campaign that increased app downloads by 25%.</p>
+          <div class="tags"><span class="tag">Survey</span><span class="tag">Campaign</span><span class="tag">Market Research</span></div>
+        </div></div>
+
+        <div class="expcard"><div class="logo-box">KPU</div><div>
+          <span class="date">Sep 2024 - Nov 2024</span>
+          <h3>Election Data & Field Staff</h3>
+          <p class="org">KPU RI | Malang, Indonesia</p>
+          <p class="desc">Coordinated demographic data entry and verification under strict public-compliance standards.</p>
+          <div class="tags"><span class="tag">Data Verification</span><span class="tag">Workflow</span><span class="tag">Compliance</span></div>
+          <details><summary>View details</summary><ul>
+            <li>Coordinated entry and verification of demographic data for 300-500 voters per station, with zero duplicate records.</li>
+            <li>Raised field processing efficiency by 20% by standardizing the workflow.</li>
+          </ul></details>
+        </div></div>
+
+        <div class="expcard"><div class="logo-box"><img src="Project/Idsurvey.png" alt="IDSURVEY"></div><div>
+          <span class="date">Sep 2024 - Dec 2024</span>
+          <h3>Operational Support & Data Processing (Contract)</h3>
+          <p class="org">IDSURVEY | Malang, Indonesia</p>
+          <p class="desc">Validated and prepared operational data for reporting.</p>
+          <div class="tags"><span class="tag">Data Validation</span><span class="tag">Workflow</span><span class="tag">Field Coordination</span></div>
+          <details><summary>View details</summary><ul>
+            <li>Managed and validated 10,000+ operational records at 98% accuracy.</li>
+            <li>Standardized the collection-to-reporting workflow, improving efficiency by 20%, and prepared structured datasets for reporting.</li>
+            <li>Coordinated with field teams to keep data consistent across projects.</li>
+          </ul></details>
+        </div></div>
+
+        <div class="expcard"><div class="logo-box"><img src="Project/Novo%20Club.jpg" alt="Novo Club by Paragon"></div><div>
+          <span class="date">Feb 2024 - Oct 2024</span>
+          <h3>Research Coordinator (Seasonal)</h3>
+          <p class="org">Novo Club by Paragon, ParagonCorp | Malang, Indonesia</p>
+          <p class="desc">Coordinated research projects and data collection for up to 100 participants.</p>
+          <div class="tags"><span class="tag">Research</span><span class="tag">Coordination</span><span class="tag">Proposals</span></div>
+          <details><summary>View details</summary><ul>
+            <li>Coordinated end-to-end research and data collection at 98% accuracy, with 10-15 cross-functional meetings per month; insights informed project development.</li>
+            <li>Supported 3-5 project development proposals and kept all milestones on schedule.</li>
+          </ul></details>
+        </div></div>
+
+        <div class="expcard"><div class="logo-box">PU</div><div>
+          <span class="date">Aug 2023 - Aug 2024</span>
+          <h3>Operational Support - Records & Document Control (Contract)</h3>
+          <p class="org">CV Putro Utomo | Malang, Indonesia</p>
+          <p class="desc">Managed operational reports and audit-ready archives.</p>
+          <div class="tags"><span class="tag">Document Control</span><span class="tag">Reporting</span><span class="tag">Process Improvement</span></div>
+          <details><summary>View details</summary><ul>
+            <li>Managed 250+ operational reports and 1,000+ audit-ready archives, reducing documentation errors by 95%.</li>
+            <li>Raised on-time report submission from 85% to 98% by streamlining cross-department reporting.</li>
+          </ul></details>
+        </div></div>
+
+        <div class="expcard"><div class="logo-box"><img src="Project/BRI.png" alt="Bank BRI"></div><div>
+          <span class="date">Apr 2021 - May 2022</span>
+          <h3>Market & Strategic Analytics Associate</h3>
+          <p class="org">PT Bank Rakyat Indonesia (BRI) | Malang, Indonesia | Vendor contract</p>
+          <p class="desc">Customer segmentation and campaign analysis for regional market strategy.</p>
+          <div class="tags"><span class="tag">SQL</span><span class="tag">Clustering</span><span class="tag">Customer Analytics</span><span class="tag">Campaign Analysis</span></div>
+          <details><summary>View details</summary><ul>
+            <li>Segmented hundreds of thousands of customer records using SQL and clustering, contributing to a 15% increase in conversion rates.</li>
+            <li>Analyzed customer behavior and campaign performance to improve targeting, lifting lead generation by 30%.</li>
+          </ul></details>
+        </div></div>
+
+        <div class="expcard"><div class="logo-box"><img src="Project/Smartfren-Logo.wine.png" alt="Smartfren Telecom"></div><div>
+          <span class="date">Mar 2019 - Feb 2021</span>
+          <h3>Business & Sales Analyst</h3>
+          <!-- TODO: confirm exact job title and employment status against your official documents, then add the status after "Malang, Indonesia" -->
+          <p class="org">Smartfren Telecom Tbk | Malang, Indonesia</p>
+          <p class="desc">Regional sales and activation analysis, campaign evaluation, and distributor monitoring.</p>
+          <div class="tags"><span class="tag">Sales Analytics</span><span class="tag">Campaign Evaluation</span><span class="tag">Distributor Monitoring</span></div>
+          <details><summary>View details</summary><ul>
+            <li>Analyzed regional sales and activation data, supporting 12-18% quarterly growth in activations.</li>
+            <li>Evaluated campaign effectiveness and optimized acquisition strategy, increasing user acquisition by 20%.</li>
+            <li>Monitored distributor and retailer performance (95% partner engagement) and joined field activities at campuses, schools, and institutions.</li>
+          </ul></details>
+        </div></div>
 
       </div>
     </div>
   </section>
 
   <!-- SKILLS -->
-  <section id="skills">
+  <section id="skills" class="alt">
     <div class="wrap">
       <p class="eyebrow">Skills</p>
       <h2>My Analyst Toolkit</h2>
-      <div class="skills" style="margin-top:22px">
-        <div class="skillbox"><h3>Business & Commercial</h3><div class="tags"><span class="tag">Campaign Analysis</span><span class="tag">Customer Segmentation</span><span class="tag">Sales & Activation Analysis</span><span class="tag">Market Research</span><span class="tag">Lead Generation</span><span class="tag">Distributor Monitoring</span></div></div>
-        <div class="skillbox"><h3>Tools & Languages</h3><div class="tags"><span class="tag">SQL</span><span class="tag">Python (pandas)</span><span class="tag">TensorFlow</span><span class="tag">Power BI</span><span class="tag">Tableau</span><span class="tag">Streamlit</span><span class="tag">Advanced Excel</span><span class="tag">Google Sheets API</span></div></div>
-        <div class="skillbox"><h3>Analytics Methods</h3><div class="tags"><span class="tag">Exploratory Analysis</span><span class="tag">Statistical Analysis</span><span class="tag">Regression</span><span class="tag">Classification</span><span class="tag">Clustering</span><span class="tag">Data Validation</span></div></div>
-        <div class="skillbox"><h3>Soft Skills</h3><div class="tags"><span class="tag">Cross-functional Coordination</span><span class="tag">Stakeholder Communication</span><span class="tag">Public Speaking</span><span class="tag">Agile/Scrum</span><span class="tag">Project Management</span></div></div>
+      <p class="sub">Each group notes where I used it, so you can check it against the work above.</p>
+      <div class="skills">
+        <div class="skillbox"><h3>Data & Tools</h3><div class="tags"><span class="tag">SQL</span><span class="tag">Python (pandas)</span><span class="tag">Advanced Excel</span><span class="tag">Tableau</span><span class="tag">Power BI</span><span class="tag">Streamlit</span><span class="tag">Google Sheets API</span></div><p class="fine">Used at BRI and Codveda, and in the attrition, dropout, and ETL projects.</p></div>
+        <div class="skillbox"><h3>Analysis Methods</h3><div class="tags"><span class="tag">Exploratory Analysis</span><span class="tag">Segmentation & Clustering</span><span class="tag">Classification</span><span class="tag">Data Validation</span></div><p class="fine">Used at BRI, IDSURVEY, and in the HR attrition project.</p></div>
+        <div class="skillbox"><h3>Commercial</h3><div class="tags"><span class="tag">Campaign Analysis</span><span class="tag">Sales & Activation Analysis</span><span class="tag">Distributor Monitoring</span><span class="tag">Market Research</span><span class="tag">Lead Generation</span></div><p class="fine">Used at Smartfren, BRI, and Poplite.</p></div>
+        <div class="skillbox"><h3>Working With Teams</h3><div class="tags"><span class="tag">Stakeholder Communication</span><span class="tag">Cross-functional Coordination</span><span class="tag">Project Management</span><span class="tag">Agile/Scrum</span></div><p class="fine">Used at Teman Ambiss and Novo Club. Top 5 Best Presenter at Bangkit Academy.</p></div>
       </div>
     </div>
   </section>
 
   <!-- EDUCATION -->
-  <section id="education" class="alt">
+  <section id="education">
     <div class="wrap">
       <p class="eyebrow">Education</p>
       <h2>Where I Started Growing</h2>
@@ -755,18 +634,18 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
   </section>
 
   <!-- CERTIFICATES -->
-  <section id="certificates">
+  <section id="certificates" class="alt">
     <div class="wrap">
-      <p class="eyebrow">Certificates</p>
-      <h2>Credentials & Recognition</h2>
+      <p class="eyebrow">Credentials</p>
+      <h2>Certifications & Recognition</h2>
       <div class="certs" style="margin-top:22px">
         <div class="cert"><div class="strip"></div><div class="in"><span class="date">Jun - Sep 2026</span><h3>AWS re/Start Graduate (Batch 15)</h3><p>Amazon Web Services</p></div></div>
-        <div class="cert"><div class="strip"></div><div class="in"><span class="date">2024 - 2025</span><h3>Bangkit Academy: Machine Learning</h3><p>Google, GoTo, Traveloka</p></div></div>
-        <div class="cert"><div class="strip"></div><div class="in"><span class="date">Feb - Apr 2024</span><h3>Data Science Professional Program</h3><p>Digitalent Scholarship</p></div></div>
-        <div class="cert"><div class="strip"></div><div class="in"><span class="date">Aug - Dec 2023</span><h3>SMKDEV Data Analyst Program</h3><p>SMKDEV</p></div></div>
+        <div class="cert"><div class="strip"></div><div class="in"><span class="date">2025</span><h3>TOEFL ITP: 603/677 (CEFR B2)</h3><p>EF EFEKTA</p></div></div>
         <div class="cert"><div class="strip"></div><div class="in"><span class="date">2025</span><h3>Data Analyst with Python</h3><p>Dicoding Indonesia</p></div></div>
-        <div class="cert"><div class="strip"></div><div class="in"><span class="date">2023</span><h3>Google Project Management Professional Certificate</h3><p>Coursera</p></div></div>
+        <div class="cert"><div class="strip"></div><div class="in"><span class="date">Feb - Apr 2024</span><h3>Data Science Professional Program</h3><p>Digitalent Scholarship</p></div></div>
         <div class="cert"><div class="strip"></div><div class="in"><span class="date">2024</span><h3>Microsoft Office Specialist: Excel Associate</h3><p>Microsoft</p></div></div>
+        <div class="cert"><div class="strip"></div><div class="in"><span class="date">Aug - Dec 2023</span><h3>SMKDEV Data Analyst Program</h3><p>SMKDEV</p></div></div>
+        <div class="cert"><div class="strip"></div><div class="in"><span class="date">2023</span><h3>Google Project Management Professional Certificate</h3><p>Coursera</p></div></div>
         <div class="cert"><div class="strip"></div><div class="in"><span class="date">May 2025</span><h3>Double Gold Medal: English & General Knowledge</h3><p>ENSO Competition & SainsFes</p></div></div>
         <div class="cert"><div class="strip"></div><div class="in"><span class="date">2025</span><h3>Educativa Scholarship</h3><p>Scholarship awardee</p></div></div>
         <div class="cert"><div class="strip"></div><div class="in"><span class="date">2024</span><h3>Pegadaian Scholarship</h3><p>Scholarship awardee</p></div></div>
@@ -775,15 +654,15 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="alt">
+  <section id="contact">
     <div class="wrap">
       <p class="eyebrow">Get in Touch</p>
-      <h2>Let's Connect</h2>
-      <p class="sub">Interested in working together or discussing data? Let's talk.</p>
+      <h2>Let’s Connect</h2>
+      <p class="sub">Open to Commercial Analyst, business analysis, data analytics, and management trainee roles.</p>
       <div class="contact">
         <div class="info">
           <div><small>Location</small>Malang, East Java, Indonesia</div>
-          <div><small>Open to</small>Commercial analyst, business analysis, data analytics, and management trainee roles</div>
+          <div><small>Email</small><a href="mailto:baskorohadi327@gmail.com">baskorohadi327@gmail.com</a></div>
           <div class="follow"><small>Follow me on</small>
             <div class="social">
               <a href="https://linkedin.com/in/hadhibaskoro" target="_blank" rel="noopener" aria-label="LinkedIn" data-ga-event="social_linkedin_click"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
@@ -791,7 +670,7 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
             </div>
           </div>
         </div>
-        <form class="form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <form class="form" id="contactForm" action="https://formspree.io/f/xoedzdwv" method="POST">
           <div class="row2">
             <label>Name<input type="text" name="name" placeholder="Your name" required></label>
             <label>Email<input type="email" name="email" placeholder="your@email.com" required></label>
@@ -804,7 +683,7 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
             <span>Send Message</span>
           </button>
           <p class="msg" id="formMsg" role="status"></p>
-          <small class="note">I'll respond within 24-48 hours</small>
+          <small class="note">I’ll respond within 24-48 hours, or email me directly at <a href="mailto:baskorohadi327@gmail.com">baskorohadi327@gmail.com</a></small>
         </form>
       </div>
     </div>
@@ -821,11 +700,11 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
       </div>
       <div>
         <h4>Quick Links</h4>
-        <a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a>
+        <a href="#projects">Work</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a>
       </div>
       <div>
         <h4>More</h4>
-        <a href="#education">Education</a><a href="#certificates">Certificates</a><a href="#contact">Contact</a><a href="CV_Dwi_Hadi_Yulvi_Baskoro.pdf" target="_blank" rel="noopener" data-ga-event="download_resume_click">Resume</a>
+        <a href="#education">Education</a><a href="#certificates">Credentials</a><a href="#contact">Contact</a><a href="CV_Dwi_Hadi_Yulvi_Baskoro.pdf" target="_blank" rel="noopener" data-ga-event="download_resume_click">Resume</a>
       </div>
     </div>
     <div class="copy">© 2026 Dwi Hadi Yulvi Baskoro. All rights reserved. | <a href="#" data-scroll-top style="display:inline">Back to Top</a></div>
@@ -843,13 +722,9 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
 
 <script>
 (function(){
-  /* Helper to send GA4 custom events safely */
   function trackEvent(eventName, params){
-    if(typeof window.gtag==='function'){
-      window.gtag('event', eventName, params || {});
-    }
+    if(typeof window.gtag==='function'){ window.gtag('event', eventName, params || {}); }
   }
-
   document.querySelectorAll('[data-ga-event]').forEach(function(el){
     el.addEventListener('click',function(){
       trackEvent(el.getAttribute('data-ga-event'), {
@@ -858,12 +733,10 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
       });
     });
   });
-
   document.querySelector('.hire-pill').addEventListener('click',function(){
     trackEvent('hire_me_click', { location: 'navbar_pill' });
   });
 
-  /* Clean URL: scroll to top without #top hash & strip existing #top */
   if(window.location.hash==='#top'){
     history.replaceState(null,'',window.location.pathname+window.location.search);
   }
@@ -877,7 +750,6 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
     });
   });
 
-  /* Theme: accent color + dark mode */
   var root=document.documentElement;
   var modeBtn=document.getElementById('modeBtn');
   var swatches=document.querySelectorAll('.sw');
@@ -900,7 +772,6 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
   });
   syncTheme();
 
-  /* Subtle mouse parallax on Hero Portrait + Marquee */
   var heroEl=document.getElementById('hero');
   var portrait=document.getElementById('portraitStage');
   var marquee=document.getElementById('marqueeLayer');
@@ -918,7 +789,6 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
     });
   }
 
-  /* Work Gallery 3D Coverflow Carousel */
   var allItems=Array.prototype.slice.call(document.querySelectorAll('#projectStore .proj-item'));
   var stage=document.getElementById('galStage');
   var dotsEl=document.getElementById('galDots');
@@ -971,7 +841,6 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
         if(diff>n/2) diff-=n;
         if(diff<-n/2) diff+=n;
       }
-
       var abs=Math.abs(diff);
       if(abs>2){
         slide.style.opacity='0';
@@ -1010,18 +879,15 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
   }
 
   document.getElementById('galPrev').addEventListener('click',function(){
-    idx=(idx-1+activeItems.length)%activeItems.length;
-    renderGallery();
+    idx=(idx-1+activeItems.length)%activeItems.length; renderGallery();
   });
   document.getElementById('galNext').addEventListener('click',function(){
-    idx=(idx+1)%activeItems.length;
-    renderGallery();
+    idx=(idx+1)%activeItems.length; renderGallery();
   });
   document.getElementById('galOpen').addEventListener('click',function(){
     if(activeItems[idx]) openProjectModal(activeItems[idx]);
   });
 
-  /* Touch swipe support */
   var touchX=0;
   stage.addEventListener('touchstart',function(e){touchX=e.changedTouches[0].clientX;},{passive:true});
   stage.addEventListener('touchend',function(e){
@@ -1056,27 +922,30 @@ footer{background:var(--surface); border-top:1px solid var(--border); padding:36
     e.preventDefault();
     msg.className='msg'; msg.textContent='';
     trackEvent('contact_form_submit', { status: 'attempt' });
+    var fd=new FormData(form);
     if(form.action.indexOf('YOUR_FORM_ID')!==-1){
-      msg.className='msg err';
-      msg.textContent='The contact form is not activated yet. Please message me on LinkedIn instead.';
+      /* Fallback until a Formspree ID is set: open the visitor's email app with the message filled in */
+      var body='From: '+fd.get('name')+' ('+fd.get('email')+')\n\n'+fd.get('message');
+      window.location.href='mailto:baskorohadi327@gmail.com?subject='+encodeURIComponent(fd.get('subject')||'Portfolio inquiry')+'&body='+encodeURIComponent(body);
+      msg.className='msg ok';
+      msg.textContent='Opening your email app with your message. If nothing opens, email me at baskorohadi327@gmail.com.';
       return;
     }
     var btn=form.querySelector('button[type=submit] span');
     btn.textContent='Sending...';
-    fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+    fetch(form.action,{method:'POST',body:fd,headers:{'Accept':'application/json'}})
       .then(function(r){
         if(r.ok){
           form.reset();
           msg.className='msg ok';
           msg.textContent='Thank you! Your message has been sent.';
           trackEvent('contact_form_submit', { status: 'success' });
-        }
-        else{
+        }else{
           msg.className='msg err';
-          msg.textContent='Something went wrong. Please try again or message me on LinkedIn.';
+          msg.textContent='Something went wrong. Please try again or email me directly.';
         }
       })
-      .catch(function(){msg.className='msg err'; msg.textContent='Network error. Please try again or message me on LinkedIn.';})
+      .catch(function(){msg.className='msg err'; msg.textContent='Network error. Please try again or email me directly.';})
       .then(function(){btn.textContent='Send Message';});
   });
 })();
